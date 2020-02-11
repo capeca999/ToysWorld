@@ -22,7 +22,7 @@ class Productos extends Migration
             $table->string('descripcion');
             $table->string('marca');
             $table->bigInteger('peso');
-            $table->bigInteger('precio');
+            $table->decimal('precio');
             $table->bigInteger('edad');
             $table->enum('estado');
             $table->timestamps();
