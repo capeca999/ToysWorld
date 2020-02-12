@@ -1,13 +1,6 @@
-#izquierda{
-    background-color:#edf7fa;
-}
-        
-#derecha{
-    background-color:red;
-}
-
-body{
+section{
     font-family: "Nunito Sans",Arvo,"Open Sans",sans-serif;
+    background-color: #edf7fa;
 }
 
 .grande{
@@ -22,5 +15,13 @@ body{
 input{
     background-color:#edf7fa;
     border: none;
-    width: 5%;
+    width: 4%;
+}
+
+#tabla{
+    background-color:#ffb677;
+    border: 3px solid black;
+    border-collapse: collapse;
+    padding-left: 1px;
+    padding-right: 1px;
 }
