@@ -1,0 +1,26 @@
+#izquierda{
+    background-color:#edf7fa;
+}
+        
+#derecha{
+    background-color:red;
+}
+
+body{
+    font-family: "Nunito Sans",Arvo,"Open Sans",sans-serif;
+}
+
+.grande{
+    font-size: 2em;   
+    font-weight: bolder;
+}
+
+.medio{
+    font-size: 1.2em;
+}
+
+input{
+    background-color:#edf7fa;
+    border: none;
+    width: 5%;
+}
