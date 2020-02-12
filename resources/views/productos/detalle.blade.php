@@ -15,8 +15,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
-                        <img src="{{ asset('img/img.jpg') }}" class="detalle-img" alt="detalles_producto">
+                        <div class="row">
+                            <div class="col-sm boton-img">
+                                <img class="boton-izquierda" src="{{ asset('img/icons/boton-izquierda.svg') }}" class="detalle-img" alt="izquierda-img">
+                            </div>
+                            <div class="col-sm">
 
+                                <img class="papelera" src="{{ asset('img/img.jpg') }}" class="detalle-img" alt="papelera-img">
+                            </div>
+
+                            <div class="col-sm boton-img">
+                                <img class="boton-derecha"  src="{{ asset('img/icons/boton-derecha.svg') }}" class="derecha-img" alt="derecha-img">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm">
                         <div class="detalle-producto">
@@ -53,7 +64,7 @@
                     <span>5 - 7</span>   
                 </div>
                 <hr>
-                 <div class="d-flex">
+                <div class="d-flex">
                     <span class="mr-auto">Otro</span> 
                     <span>Cosas</span>   
                 </div>

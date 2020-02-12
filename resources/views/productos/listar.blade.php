@@ -11,8 +11,17 @@
     </head>
     <body>
         <h1>AdministrarProductos</h1>
-        <table class="table">
-            <thead class="thead-dark">
+
+        <form action="#" method="get">
+            <div class="listar-productos">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="id-listar" id="nombre" aria-describedby="id" placeholder="Ejemplo: bicicleta">
+            </div>
+        </form>
+
+
+        <table class="table table-responsive">
+            <thead class="cabecera-tabla">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
@@ -25,6 +34,8 @@
                     <th scope="col">Edad Recomendada</th>
                     <th scope="col">Stock</th>
                     <th scope="col">Estado</th>
+                     <th scope="col">Foto</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -40,8 +51,10 @@
                     <td>@mdo</td>
                     <td>@mdo</td>
                     <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td><img src="{{ asset('img/icons/papelera.svg') }}" class="papelera-img" alt="papelera"></td>
                 </tr>
-                <tr>
+                <tr> 
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
@@ -53,6 +66,8 @@
                     <td>@fat</td>
                     <td>@fat</td>
                     <td>@fat</td>
+                    <td>@fat</td>
+                    <td><img src="{{ asset('img/icons/papelera.svg') }}" class="papelera-img" alt="papelera"></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -66,8 +81,13 @@
                     <td>@twitter</td>
                     <td>@twitter</td>
                     <td>@twitter</td>
+                    <td>@twitter</td>
+                    <td><img src="{{ asset('img/icons/papelera.svg') }}" class="papelera-img" alt="papelera"></td>
                 </tr>
             </tbody>
         </table>
+        <div class="contenedor-anyadir">
+            <img src="{{ asset('img/icons/anyadir-elemento.svg') }}" class="anyadir-img" alt="crear-elemento">
+        </div>
     </body>
 </html>
