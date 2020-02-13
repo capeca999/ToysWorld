@@ -89,7 +89,7 @@ body{
 }
 
 .table{
-    margin-left: 16%;
+    /*margin-left: 16%;*/
 }
 
 .listar-productos{
@@ -107,7 +107,8 @@ body{
     border: 2px solid #54609c;
 }
 tbody tr{
-    color: darkgray;
+    color: gray;
+    text-align: center;
 }
 tbody tr:hover{
     background-color: #D8F0FD;
@@ -128,10 +129,34 @@ tbody tr .papelera-img{
 .contenedor-anyadir{
     text-align: center;
     opacity: 0.2;
-    border: 1px solid gray;
+    border-top: 1px solid gray;
 }
 
 .contenedor-anyadir:hover{
     opacity: 2;
 }
 
+#dato-anyadir, #input-anyadir{
+    border-radius: 10px;
+    width: 70%;
+}
+
+#fanyadir input{
+    border-radius: 10px;
+    width: 70%;
+}
+#fanyadir img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.2;
+
+}
+#fanyadir img:hover{
+    opacity: 2;
+
+}
+
+#eliminado{
+    background-color: #FF5252;
+    color:#E3E3E3;
+}

@@ -3,11 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>Produtos</title>
-
+        <!-- AÑADIR AL LAYOUT -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
         <link rel="stylesheet" type="text/css" href="{{asset('css/estilo.css')}}">
 
+        <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous"></script>
+
+        <script src="{{ asset('js/listar-productos.js') }}"></script>
+        <!--/////////////////////////////////////////////////////////////////////////////// -->
     </head>
     <body>
         <h1>AdministrarProductos</h1>
@@ -34,7 +41,7 @@
                     <th scope="col">Edad Recomendada</th>
                     <th scope="col">Stock</th>
                     <th scope="col">Estado</th>
-                     <th scope="col">Foto</th>
+                    <th scope="col">Foto</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -87,7 +94,7 @@
             </tbody>
         </table>
         <div class="contenedor-anyadir">
-            <img src="{{ asset('img/icons/anyadir-elemento.svg') }}" class="anyadir-img" alt="crear-elemento">
+            <img src="{{ asset('img/icons/plus.svg') }}" class="anyadir-img" alt="crear-elemento">
         </div>
     </body>
 </html>
