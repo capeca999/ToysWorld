@@ -5,37 +5,27 @@
     <title>ToysWorld - </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-light navbar-expand-md custom-header">
-        <div class="container-fluid">
-        
-        <div>
-            <img class="logotoys  img-fluid2" src="img/caballo.png">
-            <img class="nombrelogo   img-fluid" src="img/titulo.png">
-            <input class="buscar " type="text" placeholder="Buscar juguetes">
-        </div>
-        
-         <div class="collapse navbar-collapse " id="navbar-collapse">
+        <div class="row ml-5 mr-0">
 
-            <ul class="nav navbar-nav ml-auto  ">
-                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"> <img src="img/avatar.jpg" class="dropdown-image"></a>
-                    <div class="dropdown-menu dropdown-menu-right" role="menu"><a class="dropdown-item" role="presentation" href="#">Perfil </a><a class="dropdown-item" role="presentation" href="#">Pedidos </a><a class="dropdown-item" role="presentation" href="#">Logout </a></div>
-                </li>
-            </ul>
+            <div class="col-md-9 col-12 mt-md-2 mt-5 mb-0 pb-0">
+                <img class="logotoys img-fluid2" src="img/caballo.png">
+                <img class="nombrelogo img-fluid" src="img/titulo.png">
+                <input class="buscar ml-5" type="text" placeholder="Buscar juguetes"><img class="lupa" src="img/lupa.png" alt="lupa">
+            </div>
 
-            <ul class="nav navbar-nav links  ">
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#"> <img class="iconos" src="img/login.svg">LogIn </a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#"> <img class="iconos" src="img/register.svg">Registrarse </a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#"> <img class="iconos" src="img/basket.svg"> Carrito</a></li>
-            </ul>
-        </div>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="col-md-3 col-12 ml-4 ml-sm-5 ml-md-0 mt-4">
+                <img class="iconos ml-3" src="img/login.svg" alt="Login">
+                <img class="iconos ml-5" src="img/register.svg" alt="Registrarse">
+                <img class="iconos ml-5" src="img/basket.svg" alt="Cesta">
+                <img class="iconos ml-5" src="img/avatar.jpg" alt="Perfil">
+            </div>
 
         </div>
-        </nav>
     </header>   
     
     <div id="contenedorPrincipal">         
@@ -69,5 +59,6 @@
             </div>
         </div>     
 </footer>
+
 </body>
 </html>
