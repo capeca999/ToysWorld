@@ -59,7 +59,7 @@
                     <td>@mdo</td>
                     <td>@mdo</td>
                     <td>@mdo</td>
-                    <td><img src="{{ asset('img/icons/papelera.svg') }}" class="papelera-img" alt="papelera"></td>
+                    <td><img src="{{ asset('img/icons/papelera.svg') }}" id="baja" alt="papelera"></td>
                 </tr>
                 <tr> 
                     <th scope="row">2</th>
@@ -74,7 +74,7 @@
                     <td>@fat</td>
                     <td>@fat</td>
                     <td>@fat</td>
-                    <td><img src="{{ asset('img/icons/papelera.svg') }}" class="papelera-img" alt="papelera"></td>
+                    <td><img src="{{ asset('img/icons/papelera.svg') }}" id="baja" alt="papelera"></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -89,12 +89,12 @@
                     <td>@twitter</td>
                     <td>@twitter</td>
                     <td>@twitter</td>
-                    <td><img src="{{ asset('img/icons/papelera.svg') }}" class="papelera-img" alt="papelera"></td>
+                    <td><img src="{{ asset('img/icons/papelera.svg') }}" id="baja" alt="papelera"></td>
                 </tr>
             </tbody>
         </table>
-        <div class="contenedor-anyadir">
-            <img src="{{ asset('img/icons/plus.svg') }}" class="anyadir-img" alt="crear-elemento">
+        <div id="contenedor-anyadir">
+            <img src="{{ asset('img/icons/suma.svg') }}" id="anyadir-img" alt="crear-elemento">
         </div>
     </body>
 </html>

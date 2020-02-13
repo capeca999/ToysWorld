@@ -77,19 +77,27 @@ body{
     height: 35px;
 }
 
+.precio-producto{
+    font-size: 2em;
+    font-weight: bold;
+    color:#FF8364 ;
+    margin-top: 5%;
+}
+.descuento-producto{
+    margin-top: 20%;
+    font-size: 0.8em;
+    color:darkgray;
+}
+
 /******* Listar Productooooosss*/
 
-.papelera-img{
+#baja{
     width: 20px;
     height: 20px;
 }
 
 .cabecera-tabla{
     background-color: #5F6CAF ;
-}
-
-.table{
-    /*margin-left: 16%;*/
 }
 
 .listar-productos{
@@ -114,25 +122,25 @@ tbody tr:hover{
     background-color: #D8F0FD;
     color: black;
 }
-tbody tr .papelera-img:hover{
+tbody tr img:hover{
     opacity: 2;
 }
 
-tbody tr .papelera-img{
+tbody tr img{
     opacity: 0.2;
 }
 
-.anyadir-img{
+#anyadir-img{
     width: 50px;
     height: 50px;
 }
-.contenedor-anyadir{
+#contenedor-anyadir, #contenedor-eliminar{
     text-align: center;
     opacity: 0.2;
     border-top: 1px solid gray;
 }
 
-.contenedor-anyadir:hover{
+#contenedor-anyadir:hover, #contenedor-eliminar:hover{
     opacity: 2;
 }
 
@@ -156,7 +164,12 @@ tbody tr .papelera-img{
 
 }
 
-#eliminado{
+#eliminado:hover{
     background-color: #FF5252;
+    color:#E3E3E3;
+}
+
+#eliminado{
+    background-color: #FF8C8C;
     color:#E3E3E3;
 }
