@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('contenido')
-<link rel="stylesheet" type="text/css" href="/css/estilo.css">
 <script src="/js/listar-productos.js"></script>
 <div id="contenedor-listar">
     <form action="#" method="get">
