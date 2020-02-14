@@ -11,8 +11,8 @@ class FkPed extends Migration{
      * @return void
      */
     public function up(){
-        Schema::table('pedidos', function (Blueprint $table) {
-            $table->foreign('nif')->references('nif')->on('usuarios')->onDelete('cascade');
+        Schema::table('orders', function (Blueprint $table) {
+            $table->foreign('nif')->references('nif')->on('users')->onDelete('cascade');
         });
     }
 
@@ -22,7 +22,7 @@ class FkPed extends Migration{
      * @return void
      */
     public function down(){
-        Schema::table('pedidos', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             $table->dropForeign('nif');
         });
     }

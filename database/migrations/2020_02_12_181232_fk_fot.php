@@ -11,8 +11,8 @@ class FkFot extends Migration{
      * @return void
      */
     public function up(){
-        Schema::table('fotos', function (Blueprint $table) {
-            $table->foreign('id_producto')->references('id')->on('productos')->onDelete('cascade');
+        Schema::table('images', function (Blueprint $table) {
+            $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
         });
     }
 
@@ -22,8 +22,8 @@ class FkFot extends Migration{
      * @return void
      */
     public function down(){
-        Schema::table('fotos', function (Blueprint $table) {
-            $table->dropForeign('id_producto');
+        Schema::table('images', function (Blueprint $table) {
+            $table->dropForeign('id_product');
         });
     }
 }

@@ -11,8 +11,8 @@ class FkPro extends Migration{
      * @return void
      */
     public function up(){
-        Schema::table('productos', function (Blueprint $table) {
-            $table->foreign('id_categoria')->references('id')->on('categorias')->onDelete('cascade');
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign('id_category')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -22,8 +22,8 @@ class FkPro extends Migration{
      * @return void
      */
     public function down(){
-        Schema::table('productos', function (Blueprint $table) {
-            $table->dropForeign('id_categoria');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropForeign('id_category');
         });
     }
 }

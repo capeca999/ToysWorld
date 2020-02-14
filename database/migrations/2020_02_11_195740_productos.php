@@ -11,19 +11,19 @@ class Productos extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->double('impuesto');
-            $table->double('descuento')->nullable();
-            $table->string('nombre');
-            $table->string('descripcion');
-            $table->string('marca');
-            $table->double('peso');
-            $table->double('precio');
-            $table->smallInteger('edad');
+            $table->double('taxes');
+            $table->double('discount')->nullable();
+            $table->string('name');
+            $table->string('description');
+            $table->string('brand');
+            $table->double('weight');
+            $table->double('price');
+            $table->smallInteger('age');
             $table->integer('stock');
-            $table->string('estado');
-            $table->bigInteger('id_categoria')->unsigned();
+            $table->enum('status', ['Disponible', 'No_Disponible']);
+            $table->bigInteger('id_category')->unsigned();
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class Productos extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('products');
     }
 }

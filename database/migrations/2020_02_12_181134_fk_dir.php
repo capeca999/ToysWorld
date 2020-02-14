@@ -11,8 +11,8 @@ class FkDir extends Migration{
      * @return void
      */
     public function up(){
-        Schema::table('direcciones', function (Blueprint $table) {
-            $table->foreign('nif')->references('nif')->on('usuarios')->onDelete('cascade');
+        Schema::table('addresses', function (Blueprint $table) {
+            $table->foreign('nif')->references('nif')->on('users')->onDelete('cascade');
         });
     }
 
@@ -22,7 +22,7 @@ class FkDir extends Migration{
      * @return void
      */
     public function down(){
-        Schema::table('direcciones', function (Blueprint $table) {
+        Schema::table('addresses', function (Blueprint $table) {
             $table->dropForeign('nif');
         });
     }

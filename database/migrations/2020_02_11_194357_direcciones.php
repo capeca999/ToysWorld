@@ -11,15 +11,15 @@ class Direcciones extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('direcciones', function (Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('calle');
-            $table->smallInteger('numero');
-            $table->mediumInteger('cod_postal');
-            $table->string('localidad');
-            $table->string('provincia');
-            $table->string('pais');
-            $table->string('tipo');
+            $table->string('street');
+            $table->smallInteger('number');
+            $table->mediumInteger('postal_code');
+            $table->string('location');
+            $table->string('province');
+            $table->string('country');
+            $table->enum('type', ['plaza', 'avenida', 'bulevar', 'calle']);
             $table->string('nif');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class Direcciones extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('direcciones');
+        Schema::dropIfExists('addresses');
     }
 }

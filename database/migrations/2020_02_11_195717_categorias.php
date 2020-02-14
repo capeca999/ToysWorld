@@ -11,10 +11,10 @@ class Categorias extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('categorias', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');     
-            $table->bigInteger('id_categoriaPadre')->unsigned();
+            $table->string('name');
+            $table->bigInteger('id_parentCategories')->nullable()->unsigned();
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ class Categorias extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('categorias');
+        Schema::dropIfExists('categories');
     }
 }
