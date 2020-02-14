@@ -4,14 +4,26 @@ body{
 }
 
 
-/******* Detelles Productooooosss*/
+/*
+|--------------------------------------------------------------------------
+| DETALLES Producto por ID
+|--------------------------------------------------------------------------
+|
+| Las rutas relacionadas de los productos
+|
+*/
 
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
 
 .contenedor-producto{
     background-color: #FFB677 ;
     padding: 5%; 
-
     margin-left: 10%;
+    margin-bottom: 5%;
+    margin-top: 5%;
     width: 80%;
     align-items: center;
 }
@@ -19,7 +31,7 @@ body{
 .detalle-producto{
     background-color: white;
     padding: 15px;
-    /* margin-top: 20%;*/
+    margin-top: 5%;
     border-radius: 15px;
 }
 .detalle-producto:nth-child(2){
@@ -89,7 +101,24 @@ body{
     color:darkgray;
 }
 
-/******* Listar Productooooosss*/
+/*
+|--------------------------------------------------------------------------
+| LISTAR Productos/Usuarios
+|--------------------------------------------------------------------------
+|
+| Las rutas relacionadas de los productos
+|
+*/
+
+#contenedor-listar{
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+table td{
+    width: 10%; 
+
+}
 
 #baja{
     width: 20px;

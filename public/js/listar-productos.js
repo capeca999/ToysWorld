@@ -53,6 +53,7 @@ $(function(){
 
         //Cambiamos el añadir elemento
         $('#anyadir-img').attr('src','../img/icons/resta.svg');
+        $('#anyadir-img').attr('title','Atrás');
         $(this).attr('id','contenedor-eliminar');
 
     });
@@ -63,16 +64,20 @@ $(function(){
 
         //Cambiamos el añadir elemento
         $('#anyadir-img').attr('src','../img/icons/suma.svg');
+        $('#anyadir-img').attr('title','Añadir');
         $(this).attr('id','contenedor-anyadir');
 
 
     });
 
     /*GUARDAR PRODUCTO - Al hacer click en el icono de guardado se deberá comprobar si se ha añadido todo correctamente y si es así insertarlo en la BBDD*/
-    $('#fanyadir').on('click','img',function(){
-        /*for(var i=1;i<13;i++){
-            console.log($('#fanyadir td:nth-child('+i+')').val());
-        }*/
+    $('body').on('click','#guardar',function(){
+
+        for(var i=1;i<12;i++){
+            console.log($('#fanyadir td:nth-child(1)').val());
+        }
+
+
     });
 
     /*DAR DE BAJA - Al hacer click en la papelera el pedido pasara a estar de baja*/
@@ -82,6 +87,7 @@ $(function(){
         fila.attr('id','eliminado');
         var img=$('<img>');
         img.attr('src','../img/icons/alta.svg');
+        img.attr('title','Dar de alta');
         img.attr('id','alta');
         $(this).parent().append(img);
 
@@ -94,6 +100,7 @@ $(function(){
     $('body').on('click','#alta',function(){
         $(this).attr('src','../img/icons/papelera.svg');
         $(this).attr('id','baja');
+        $(this).attr('title','Dar de baja');
         $(this).parent().parent().attr('id','');
     });
 

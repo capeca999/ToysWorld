@@ -11,6 +11,51 @@
 |
 */
 
-Route::get('/cesta', function () {
-    return view('cesta');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+/*
+|--------------------------------------------------------------------------
+| CRUD Usuario
+|--------------------------------------------------------------------------
+|
+| Las rutas relacionadas de los usuarios
+|
+*/
+Route::group(['prefix' => 'usuario'], function(){
+
+    Route::get('perfil/{id}', function ($id) {
+        return view('usuarios.perfil')->with('id',$id);
+    });
+    Route::get('registro/', function () {
+        return view('usuarios.registro');
+    });
+     
+    Route::get('cesta/',function(){
+        return view('usuarios.cesta');
+    });
+
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| CRUD Producto
+|--------------------------------------------------------------------------
+|
+| Las rutas relacionadas de los productos
+|
+*/
+Route::group(['prefix' => 'producto'], function(){
+
+    Route::get('detalle/{id}', function ($id) {
+        return view('productos.detalle')->with('id',$id);
+    });
+    
+    Route::get('listar/', function () {
+        return view('productos.listar');
+    });
+
+
 });
