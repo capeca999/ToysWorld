@@ -24,6 +24,14 @@ body{
 
 /* -------------------------- */
 
+/* Clase para cambiar el cursor */
+
+.cursorHand{
+    cursor:pointer;
+}
+
+/* --------------------------- */
+
 /* Logo */
 
 .logo{
@@ -57,7 +65,7 @@ header{
     height: 2.3em;
 }
 
-.lupa{
+#lupaHeader{
     width: 4%;
     margin-left: 17px;
     margin-bottom: 7px;
@@ -66,7 +74,6 @@ header{
 #logoHeader{
     max-width: 15%;
     height: auto;
-    cursor:pointer;
 }
 
 #tituloHeader{
@@ -74,7 +81,7 @@ header{
     height: auto;
 }
 
-.buscar{
+#inputHeader{
     width: 70%;
 }
 
@@ -208,8 +215,7 @@ div.social-links {
     background-color:#ffb677;
     border: 3px solid black;
     border-collapse: collapse;
-    padding-left: 1px;
-    padding-right: 1px;
+    padding:3px;
 }
 
 /* -------------------------- */
