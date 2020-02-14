@@ -1,0 +1,175 @@
+body{
+    /*background-color: aqua;*/
+    background-color:#EDF7FA;
+}
+
+
+/******* Detelles Productooooosss*/
+
+
+.contenedor-producto{
+    background-color: #FFB677 ;
+    padding: 5%; 
+
+    margin-left: 10%;
+    width: 80%;
+    align-items: center;
+}
+
+.detalle-producto{
+    background-color: white;
+    padding: 15px;
+    /* margin-top: 20%;*/
+    border-radius: 15px;
+}
+.detalle-producto:nth-child(2){
+    margin-top: 5%;
+    text-align: justify;
+}
+.detalle-producto:nth-child(1) span:nth-child(1){
+    font-size: 2.5em;
+}
+
+.detalle-img{
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
+.detalle-boton{
+    background-color:#5F6CAF ;
+    width: 100%;
+}
+
+.detalle-boton:hover{
+    background-color:#54609c;
+}
+
+.detalle-atributo{
+    border-radius: 15px;
+    color: grey;
+    background-color: white;
+    padding: 2%;
+    margin-top:5%;
+}
+
+.detalle-atributo .d-flex span:nth-child(2){
+    color: black;
+}
+
+
+.contenedor-producto div div div:nth-child(1){
+    text-align: center;
+}
+
+
+.boton-img{
+    margin-top:30%;
+    opacity: 0.2;
+}
+
+.boton-img:hover{
+    opacity: 2;
+}
+
+.boton-img img{
+    width: 35px;
+    height: 35px;
+}
+
+.precio-producto{
+    font-size: 2em;
+    font-weight: bold;
+    color:#FF8364 ;
+    margin-top: 5%;
+}
+.descuento-producto{
+    margin-top: 20%;
+    font-size: 0.8em;
+    color:darkgray;
+}
+
+/******* Listar Productooooosss*/
+
+#baja{
+    width: 20px;
+    height: 20px;
+}
+
+.cabecera-tabla{
+    background-color: #5F6CAF ;
+}
+
+.listar-productos{
+    padding: 4%;
+    margin-left: 16%;
+}
+
+.id-listar{
+    border-radius: 10px;
+    width: 60%;
+    padding: 0.2%;
+}
+
+.id-listar:hover{
+    border: 2px solid #54609c;
+}
+tbody tr{
+    color: gray;
+    text-align: center;
+}
+tbody tr:hover{
+    background-color: #D8F0FD;
+    color: black;
+}
+tbody tr img:hover{
+    opacity: 2;
+}
+
+tbody tr img{
+    opacity: 0.2;
+}
+
+#anyadir-img{
+    width: 50px;
+    height: 50px;
+}
+#contenedor-anyadir, #contenedor-eliminar{
+    text-align: center;
+    opacity: 0.2;
+    border-top: 1px solid gray;
+}
+
+#contenedor-anyadir:hover, #contenedor-eliminar:hover{
+    opacity: 2;
+}
+
+#dato-anyadir, #input-anyadir{
+    border-radius: 10px;
+    width: 70%;
+}
+
+#fanyadir input{
+    border-radius: 10px;
+    width: 70%;
+}
+#fanyadir img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.2;
+
+}
+#fanyadir img:hover{
+    opacity: 2;
+
+}
+
+#eliminado:hover{
+    background-color: #FF5252;
+    color:#E3E3E3;
+}
+
+#eliminado{
+    background-color: #FF8C8C;
+    color:#E3E3E3;
+}
