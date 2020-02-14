@@ -15,18 +15,20 @@
     <header>
         <div class="row ml-5 mr-0">
             <div class="col-md-9 col-12 mt-md-2 mt-5 mb-0 pb-0">
-                <a href="/"><img id="logoHeader" class="cursorHand" src="img/caballo.png"></a>
-                <img id="tituloHeader" src="img/titulo.png">
-                <input id="inputHeader" class="ml-5" type="text"  placeholder="Buscar juguetes"><img id="lupaHeader" class="cursorHand" src="img/lupa.png" alt="lupa">
+                <a href="/"><img id="logoHeader" class="cursorHand" src="/img/caballo.png"></a>
+                <img id="tituloHeader" src="/img/titulo.png">
+                <a class="d-none d-md-inline-flex " href="productos/busqueda"><img class="cursorHand iconos ml-5" src="/img/logomenuBusqueda.png" alt="Busqueda"></a>
+                <input id="inputHeader" class="ml-5" type="text"  placeholder="Buscar juguetes"><img id="lupaHeader" class="cursorHand" src="/img/lupa.png" alt="lupa">
             </div>
 
             <div class="col-md-3 col-12 ml-4 ml-sm-5 ml-md-0 mt-4">
-                <a href="usuarios/login"><img class="cursorHand iconos ml-3" src="img/login.svg" id="loginHeader" alt="Login"></a>
-                <a href="usuarios/registro"><img class="cursorHand iconos ml-5" src="img/register.svg" id="registerHeader" alt="Registrarse"></a>
-                <a href="cesta"><img class="cursorHand iconos ml-5" src="img/basket.svg" id="cestaHeader" alt="Cesta"></a>
-                <a href="usuarios/perfil"><img class="cursorHand iconos ml-5" src="img/avatar.png" id="avatarHeader" alt="Perfil"></a>
+               @if(Auth::user()==null)
+                <a href="usuarios/login"><img class="cursorHand iconos ml-3" src="/img/icons/login.svg" id="loginHeader" alt="Login" title="Login"></a>
+                <a href="usuarios/registro"><img class="cursorHand iconos ml-5" src="/img/icons/register.svg" id="registerHeader" alt="Registrarse" title="Registrarse"></a>
+               @endif
+                <a href="cesta"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
+                <a href="usuarios/perfil"><img class="cursorHand iconos ml-5" src="/img/avatar.png" id="avatarHeader" alt="Perfil" title="Perfil"></a>
             </div>
-
         </div>
     </header>   
     
@@ -39,7 +41,7 @@
             <div class="col-sm-6 col-md-4 footer-navigation">
         
                 <p class="links"><a href="#">Terminos Y condiciones</a><strong> · </strong><a href="#">Nuestro Compromiso</a><strong> ·<br><br> </strong><a href="#">Sobre Nosotros</a><strong> · </strong><a href="#">Politica De Privacidad</a></p>
-                <img class="logo " src="img/logo.svg">
+                <img class="logo " src="/img/icons/logo.svg">
                 <p class="company-name">Tummys © 2019</p>
             </div>
             <div class="col-sm-6 col-md-4 footer-contacts">
