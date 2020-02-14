@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>ToysWorld - </title>
+    <title>ToysWorld @yield('titulo')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +24,7 @@
                 <a href="usuarios/login"><img class="cursorHand iconos ml-3" src="img/login.svg" id="loginHeader" alt="Login"></a>
                 <a href="usuarios/registro"><img class="cursorHand iconos ml-5" src="img/register.svg" id="registerHeader" alt="Registrarse"></a>
                 <a href="cesta"><img class="cursorHand iconos ml-5" src="img/basket.svg" id="cestaHeader" alt="Cesta"></a>
-                <a href="usuarios/perfil"><img class="cursorHand iconos ml-5" src="img/avatar.jpg" id="avatarHeader" alt="Perfil"></a>
+                <a href="usuarios/perfil"><img class="cursorHand iconos ml-5" src="img/avatar.png" id="avatarHeader" alt="Perfil"></a>
             </div>
 
         </div>
