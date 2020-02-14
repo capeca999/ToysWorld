@@ -11,11 +11,11 @@ class Pedidos extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('pedidos', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('fecha');
-            $table->double('precio_total',8,2);
-            $table->string('metodo_pago');
+            $table->timestamp('date');
+            $table->double('total_price',8,2);
+            $table->enum('payment_method', ['PayPal', 'Tarjeta']);
             $table->string('nif');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class Pedidos extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('orders');
     }
 }

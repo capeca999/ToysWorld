@@ -11,10 +11,10 @@ class Fotos extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('fotos', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('tipo');
-            $table->bigInteger('id_producto')->unsigned();
+            $table->string('type');
+            $table->bigInteger('id_product')->unsigned();
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ class Fotos extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('fotos');
+        Schema::dropIfExists('images');
     }
 }

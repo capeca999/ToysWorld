@@ -11,8 +11,8 @@ class FkCat extends Migration{
      * @return void
      */
     public function up(){
-        Schema::table('categorias', function (Blueprint $table) {
-            $table->foreign('id_categoriaPadre')->references('id')->on('categorias')->onDelete('cascade');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->foreign('id_parentCategories')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -22,8 +22,8 @@ class FkCat extends Migration{
      * @return void
      */
     public function down(){
-        Schema::table('categorias', function (Blueprint $table) {
-            $table->dropForeign('id_categoriaPadre');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropForeign('id_parentCategories');
         });
     }
 }

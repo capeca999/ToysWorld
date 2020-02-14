@@ -11,12 +11,12 @@ class LineaPedido extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('linea_pedido', function (Blueprint $table) {
-            $table->bigInteger('id_producto')->unsigned();
-            $table->bigInteger('id_pedido')->unsigned();
-            $table->integer('cantidad');
-            $table->double('precio');
-            $table->primary(['id_producto', 'id_pedido']);
+        Schema::create('line_product', function (Blueprint $table) {
+            $table->bigInteger('id_product')->unsigned();
+            $table->bigInteger('id_order')->unsigned();
+            $table->integer('quantity');
+            $table->double('price');
+            $table->primary(['id_product', 'id_order']);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class LineaPedido extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('linea_pedido');
+        Schema::dropIfExists('linea_product');
     }
 }

@@ -11,11 +11,11 @@ class MetodoPago extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('metodo_pago', function (Blueprint $table) {
+        Schema::create('payment_method', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre');
-            $table->string('tipo');
-            $table->string('datos');
+            $table->string('name');
+            $table->enum('type', ['PayPal', 'Tarjeta']);
+            $table->string('data');
             $table->string('nif');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ class MetodoPago extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('metodo_pago');
+        Schema::dropIfExists('payment_method');
     }
 }
