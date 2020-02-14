@@ -63,15 +63,14 @@ header{
     margin-bottom: 7px;
 }
 
-.img-fluid{
-
-    max-width: 70%;
+#logoHeader{
+    max-width: 15%;
     height: auto;
+    cursor:pointer;
 }
 
-.img-fluid2{
-
-    max-width: 15%;
+#tituloHeader{
+    max-width: 70%;
     height: auto;
 }
 
@@ -199,19 +198,13 @@ div.social-links {
 
 /* CSS Cesta */
 
-main{
+#mainCesta{
     background-color: #edf7fa;
     padding-bottom: 80px;
     padding-top: 35px;
 }
 
-input{
-    background-color:#edf7fa;
-    border: none;
-    width: 4%;
-}
-
-#tabla{
+#tablaCesta{
     background-color:#ffb677;
     border: 3px solid black;
     border-collapse: collapse;

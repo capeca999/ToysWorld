@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.min.css">
+    <script src="js/masterlayout.js"></script>
 </head>
 <body>
     <header>
         <div class="row ml-5 mr-0">
-
             <div class="col-md-9 col-12 mt-md-2 mt-5 mb-0 pb-0">
-                <img class="logotoys img-fluid2" src="img/caballo.png">
-                <img class="nombrelogo img-fluid" src="img/titulo.png">
+                <img id="logoHeader" src="img/caballo.png">
+                <img id="tituloHeader" src="img/titulo.png">
                 <input class="buscar ml-5" type="text" placeholder="Buscar juguetes"><img class="lupa" src="img/lupa.png" alt="lupa">
             </div>
 
