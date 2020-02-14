@@ -14,16 +14,16 @@
     <header>
         <div class="row ml-5 mr-0">
             <div class="col-md-9 col-12 mt-md-2 mt-5 mb-0 pb-0">
-                <img id="logoHeader" src="img/caballo.png">
+                <img id="logoHeader" class="cursorHand" src="img/caballo.png">
                 <img id="tituloHeader" src="img/titulo.png">
-                <input class="buscar ml-5" type="text" placeholder="Buscar juguetes"><img class="lupa" src="img/lupa.png" alt="lupa">
+                <input id="inputHeader" class="ml-5" type="text"  placeholder="Buscar juguetes"><img id="lupaHeader" class="cursorHand" src="img/lupa.png" alt="lupa">
             </div>
 
             <div class="col-md-3 col-12 ml-4 ml-sm-5 ml-md-0 mt-4">
-                <img class="iconos ml-3" src="img/login.svg" alt="Login">
-                <img class="iconos ml-5" src="img/register.svg" alt="Registrarse">
-                <img class="iconos ml-5" src="img/basket.svg" alt="Cesta">
-                <img class="iconos ml-5" src="img/avatar.jpg" alt="Perfil">
+                <img class="cursorHand iconos ml-3" src="img/login.svg" id="loginHeader" alt="Login">
+                <img class="cursorHand iconos ml-5" src="img/register.svg" id="registerHeader" alt="Registrarse">
+                <img class="cursorHand iconos ml-5" src="img/basket.svg" id="cestaHeader" alt="Cesta">
+                <img class="cursorHand iconos ml-5" src="img/avatar.jpg" id="avatarHeader" alt="Perfil">
             </div>
 
         </div>
@@ -37,18 +37,18 @@
        <div class="row">
             <div class="col-sm-6 col-md-4 footer-navigation">
         
-                <p class="links"><a href="#">Terminos Y condiciones</a><strong> · </strong><a href="#">Nuestro Compromiso</a><strong> · </strong><a href="#">Sobre Nosotros</a><strong> · </strong><a href="#">Politica De Privacidad</a></p>
+                <p class="links"><a href="#">Terminos Y condiciones</a><strong> · </strong><a href="#">Nuestro Compromiso</a><strong> ·<br><br> </strong><a href="#">Sobre Nosotros</a><strong> · </strong><a href="#">Politica De Privacidad</a></p>
                 <img class="logo " src="img/logo.svg">
                 <p class="company-name">Tummys © 2019</p>
             </div>
             <div class="col-sm-6 col-md-4 footer-contacts">
-                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                <div class="cursorHand"><span class="fa fa-map-marker footer-contacts-icon"> </span>
                     <p><span class="new-line-span">Plaza Rafael Atard 24</span> Valencia, Manises</p>
                 </div>
-                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                <div class="cursorHand"><i class="fa fa-phone footer-contacts-icon"></i>
                     <p class="footer-center-info email text-left"> +34 722513578</p>
                 </div>
-                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                <div class="cursorHand"><i class="fa fa-envelope footer-contacts-icon"></i>
                     <p> <a href="#" target="_blank">toysworld@gmail.com</a></p>
                 </div>
             </div>
