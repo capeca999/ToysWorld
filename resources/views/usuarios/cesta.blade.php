@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('contenido')
-<div id="mainCesta" class="row">
+<main class="row">
     <section id="izquierda" class="col-md-9 p-5">
         <article class="col-md-12 pb-2"><form action="">
             <span class="grande">Yoyo supersónico</span><br>
@@ -38,7 +38,7 @@
     
     <section id="derecha" class="col-md-3">
         <article class="m-5">
-            <table id="tablaCesta">
+            <table id="tabla">
                 <tr><td class="grande">Resumen de pedido</td></tr>
                 <tr><td>ss</td></tr>
                 <tr><td>ss</td></tr>
@@ -47,5 +47,5 @@
             </table>
         </article>
     </section>
-</div>
+</main>
 @endsection
