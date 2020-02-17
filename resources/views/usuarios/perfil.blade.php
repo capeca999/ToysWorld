@@ -1,23 +1,24 @@
 @extends('layouts.master')
 @section('contenido')
-
+<script src="/js/perfil-usuario.js"></script>
 <div id="usuario-perfil">
 
     <div id="contenedor-perfil">
         <h1>Perfil</h1>
-        Nombre&nbsp;&nbsp;<span class="nombre">Pepa</span><br><br>
-        Apellidos&nbsp;&nbsp;<span class="apellidos">Rodrigo Morcillo</span><br><br>
-        Fecha Nacimiento&nbsp;&nbsp; <span class="nacimiento">12-2-2018</span><br><br>
+        Nombre&nbsp;&nbsp;<span class="nombre" title="Doble click para cambiar">Pepa</span><br><br>
+        Apellidos&nbsp;&nbsp;<span class="apellido1" title="Doble click para cambiar">Rodrigo</span>&nbsp;<span class="apellido2" title="Doble click para cambiar">Morcillo</span> <br><br>
+        Fecha Nacimiento&nbsp;&nbsp; <span class="nacimiento" title="Doble click para cambiar">12-2-2018</span><br><br>
         <hr>
-        Email&nbsp;&nbsp;<span class="email">pepa@gmail.com</span><br><br>
-        <span class="Cambiar contraseña">Recuperar Contraseña</span>
+        Email&nbsp;&nbsp;<span class="email" title="Doble click para cambiar">pepa@gmail.com</span><br><br>
+        <a href="#" id="recu-contras">Recuperar Contraseña</a>
+
     </div>
     <div id="contenedor-historial">
         <h1>Historial</h1>
 
         <div class="historial-1">
             <div class="d-flex">
-                Nombre &nbsp;&nbsp;<span class="nombre mr-auto"> Fulana</span>
+                Nombre &nbsp;&nbsp;<span class="nombre mr-auto" > Fulana</span>
                 ID:&nbsp;&nbsp;<span class="id">{{$id}}</span><br>
             </div>
 
