@@ -5,9 +5,12 @@ $(function(){
     
     //Obtiene todo el contenido de la Cookie 'carrito' y va pasando todos los productos de la Cookie a líneas de pedido 
     var productos = JSON.parse(getCookie('carrito'));
-    for(var i=0;i<productos.length;i++){
-        anyadirProducto(productos);   
-    }   
+    if(productos!=null){
+        for(var i=0;i<productos.length;i++){
+            anyadirProducto(productos);
+        }       
+    }
+     
      
     //Añade una línea de pedido a la página
     function anyadirProducto(producto){
