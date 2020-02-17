@@ -7,8 +7,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styles.min.css">
-    <script src="js/masterlayout.js"></script>
+    <link rel="stylesheet" href="/css/styles.min.css">
+    <script src="/js/masterlayout.js"></script>
     @yield('scripts')
 </head>
 <body>
@@ -26,8 +26,8 @@
                 <a href="usuarios/login"><img class="cursorHand iconos ml-3" src="/img/icons/login.svg" id="loginHeader" alt="Login" title="Login"></a>
                 <a href="usuarios/registro"><img class="cursorHand iconos ml-5" src="/img/icons/register.svg" id="registerHeader" alt="Registrarse" title="Registrarse"></a>
                @endif
-                <a href="cesta"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
-                <a href="usuarios/perfil"><img class="cursorHand iconos ml-5" src="/img/avatar.png" id="avatarHeader" alt="Perfil" title="Perfil"></a>
+                <a href="{{url('usuario/cesta')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
+                <a href="{{url('usuario/perfil/1564')}}"><img class="cursorHand iconos ml-5" src="/img/avatar.jpg" id="avatarHeader" alt="Perfil" title="Perfil"></a>
             </div>
         </div>
     </header>   

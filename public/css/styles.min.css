@@ -326,9 +326,6 @@ body{
 |--------------------------------------------------------------------------
 | LISTAR Productos/Usuarios
 |--------------------------------------------------------------------------
-|
-| Las rutas relacionadas de los productos
-|
 */
 
 #contenedor-listar{
@@ -424,3 +421,47 @@ tbody tr img{
     color:#E3E3E3;
 }
 
+/*
+|--------------------------------------------------------------------------
+| PERFIL Usuarios/Historial
+|--------------------------------------------------------------------------
+*/
+#usuario-perfil{
+    background-color: #FFB677 ;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#usuario-perfil div{
+    margin: 5%;
+    background-color: white;
+    padding: 5%;
+    border-radius: 15px;
+}
+
+#usuario-perfil h1{
+    text-align: center;
+    padding-bottom: 5%;
+    color: black;
+}
+
+#contenedor-historial div{
+    margin: 0px;
+    padding: 0px;
+}
+
+#contenedor-historial hr{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#usuario-perfil{
+    color: gray;
+}
+
+#usuario-perfil span{
+    color: black;
+}
