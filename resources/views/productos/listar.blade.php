@@ -11,7 +11,7 @@
     </form>
     <div class="container-fluid">
         <div class="row">
-            <table class="table table-responsive text-center">
+            <table id="tabla-listar" class="table table-responsive text-center">
                 <thead class="cabecera-tabla">
                     <tr>
                         <th scope="col">ID</th>

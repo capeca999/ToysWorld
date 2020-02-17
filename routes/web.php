@@ -36,6 +36,10 @@ Route::group(['prefix' => 'usuario'], function(){
         return view('usuarios.cesta');
     });
 
+    Route::get('cesta/',function(){
+        return view('usuarios.cesta');
+    });
+
 });
 
 
@@ -52,10 +56,14 @@ Route::group(['prefix' => 'producto'], function(){
     Route::get('detalle/{id}', function ($id) {
         return view('productos.detalle')->with('id',$id);
     });
-    
+
     Route::get('listar/', function () {
         return view('productos.listar');
     });
 
+<<<<<<< Updated upstream
 
 });
+=======
+});
+>>>>>>> Stashed changes
