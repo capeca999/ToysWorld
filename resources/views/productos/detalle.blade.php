@@ -30,11 +30,11 @@
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      
+
                     </a>
                     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                       
+
                     </a>
                 </div>
 
@@ -49,11 +49,15 @@
 
                     <div class="d-flex">
                         <span class="precio-producto  mr-auto">35,50€</span><br><br>
-                        <span class="descuento-producto">Info de DESCUENTO</span>  
+                        <span class="descuento-producto">Info de DESCUENTO</span>
                     </div>
-
+                    
+                    <form id="cantidad-producto">                    
+                        <input type="number" name="cantidad" min="1" max="10" value="1">
+                    </form>
+                    
                     <br>
-                    <button id="boton-cesta" type="button" class="btn btn-primary btn-sm detalle-boton">Añadir Carrito</button>
+                    <button id="detalle-boton" type="button" class="btn btn-primary btn-sm detalle-boton">Añadir Carrito</button>
 
                 </div>
                 <div class="detalle-producto">

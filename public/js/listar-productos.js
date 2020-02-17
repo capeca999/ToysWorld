@@ -72,9 +72,22 @@ $(function(){
 
     /*GUARDAR PRODUCTO - Al hacer click en el icono de guardado se deberá comprobar si se ha añadido todo correctamente y si es así insertarlo en la BBDD*/
     $('body').on('click','#guardar',function(){
-
+        var error=false;
+        var producto=[];
         for(var i=1;i<12;i++){
-            console.log($('#fanyadir td:nth-child(1)').val());
+            if($('#fanyadir td:eq('+i+') input').val() == ''){
+                error=true;
+            }else{
+                producto.push($('#fanyadir td:eq('+i+') input').val());
+
+            }
+        }
+
+        if(!error){
+            for(var i=1;i<13;i++){
+                console.log(producto[i]);
+                $('#fanyadir td:eq('+i+')').html(producto[i]);
+            }
         }
 
 
@@ -83,7 +96,6 @@ $(function(){
     /*DAR DE BAJA - Al hacer click en la papelera el pedido pasara a estar de baja*/
     $('body').on('click','#baja',function(){
         var fila=$(this).parent().parent();
-        console.log(fila.attr('id'));
         fila.attr('id','eliminado');
         var img=$('<img>');
         img.attr('src','../img/icons/alta.svg');

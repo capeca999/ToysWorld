@@ -624,7 +624,7 @@ body{
     border-radius: 15px;
     margin-bottom: 5%;
 }
-.detalle-boton{
+#detalle-boton{
     background-color:#5F6CAF ;
     width: 100%;
 }
@@ -677,6 +677,13 @@ body{
     color:darkgray;
 }
 
+#cantidad-producto{
+    margin-top: 5%;
+    text-align:right;
+}
+#boton-cesta{
+    
+}
 /*
 |--------------------------------------------------------------------------
 | LISTAR Productos/Usuarios
