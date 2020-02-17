@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('cesta/pagar', function () {
+    return view('paginaDePago');
+});
 /*
 |--------------------------------------------------------------------------
 | CRUD Usuario
@@ -30,10 +34,6 @@ Route::group(['prefix' => 'usuario'], function(){
     });
     Route::get('registro/', function () {
         return view('usuarios.registro');
-    });
-     
-    Route::get('cesta/',function(){
-        return view('usuarios.cesta');
     });
 
     Route::get('cesta/',function(){
@@ -61,9 +61,4 @@ Route::group(['prefix' => 'producto'], function(){
         return view('productos.listar');
     });
 
-<<<<<<< Updated upstream
-
 });
-=======
-});
->>>>>>> Stashed changes
