@@ -1,3 +1,5 @@
+
+
 <?php
 
 /*
@@ -11,9 +13,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PrincipalController@index');
+Auth::routes();
 
 
 Route::get('cesta/pagar', function () {
