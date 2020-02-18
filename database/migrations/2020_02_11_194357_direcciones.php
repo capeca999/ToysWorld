@@ -19,7 +19,8 @@ class Direcciones extends Migration{
             $table->string('location');
             $table->string('province');
             $table->string('country');
-            $table->enum('type', ['plaza', 'avenida', 'bulevar', 'calle']);
+            $table->enum('type', ['envio', 'facturacion']);
+            $table->enum('way', ['plaza', 'avenida', 'bulevar', 'calle']);
             $table->string('nif');
             $table->timestamps();
         });
