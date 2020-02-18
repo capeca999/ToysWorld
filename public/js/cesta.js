@@ -1,16 +1,15 @@
 //Cargamos la página completamente antes de empezar
 $(function(){
+    
     var arr = ['silla roja','silla comoda comoda',123,450,2];
     setCookie('carrito',JSON.stringify(arr),9999999999);
     
     //Obtiene todo el contenido de la Cookie 'carrito' y va pasando todos los productos de la Cookie a líneas de pedido 
     var productos = JSON.parse(getCookie('carrito'));
-    if(productos!=null){
-        for(var i=0;i<productos.length;i++){
-            anyadirProducto(productos);
-        }       
-    }
-     
+    var precios;
+    for(var i=0;i<productos.length;i++){
+        anyadirProducto(productos);   
+    }   
      
     //Añade una línea de pedido a la página
     function anyadirProducto(producto){
@@ -48,8 +47,13 @@ $(function(){
         var gastosDeEnvio = $('#gastosDeEnvio').html();
         gastosDeEnvio = parseFloat(gastosDeEnvio);
         $('#totalCesta').html(dineroTotal+gastosDeEnvio);
-        setCookie('totalDeCesta',dineroTotal+gastosDeEnvio,30);
+        precios = JSON.stringify([dineroTotal,gastosDeEnvio]);
     }
+    
+    $('#botonPago').click(function(){
+        setCookie('preciosDeCesta',precios,45);
+        location.href="/pagar";
+    });
     
     //Crea una cookie pasando el nombre, el valor y la fecha de caducidad    
     function setCookie(cname, cvalue, exdays) {

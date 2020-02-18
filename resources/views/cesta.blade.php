@@ -28,7 +28,7 @@
         </article>
         
         <article class="ml-5">
-            <a href="pagar/"><img src="img/botonpago.png" class="ml-5" alt="Pagar"></a>
+            <img src="img/botonpago.png" id="botonPago" class="ml-5" alt="Pagar">
         </article>
     </section>
 </div>

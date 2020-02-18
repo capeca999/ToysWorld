@@ -366,6 +366,12 @@ body{
 
 /* ------------------------------- */
 
+body{
+    /*background-color: aqua;*/
+    background-color:#EDF7FA;
+}
+
+
 /* Tamaño letras */
 
 .grande{
@@ -577,7 +583,7 @@ div.social-links {
 
 /* CSS Página de pago */
 
-#tablaDePago1{
+#tablasDePago{
     background-color:#ffb677;
     border: 3px solid black;
     border-collapse: collapse;
@@ -591,7 +597,7 @@ div.social-links {
 }
 
 .camposDir1{
-    width: 85%;
+    width: 45%;
 }
 
 #numeroDirPago{
@@ -599,11 +605,6 @@ div.social-links {
 }
 
 /* -------------------------- */
-body{
-    /*background-color: aqua;*/
-    background-color:#EDF7FA;
-}
-
 
 /*
 |--------------------------------------------------------------------------
