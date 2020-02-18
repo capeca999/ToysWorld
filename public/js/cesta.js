@@ -1,22 +1,29 @@
 //Cargamos la página completamente antes de empezar
 $(function(){
     
-    var arr = ['silla roja','silla comoda comoda',123,450,2];
-    setCookie('carrito',JSON.stringify(arr),9999999999);
+    var el1 = ['mesa azul','asdasdad',1,4550,2];
+    var el2 = ['nenuco','muñeco',2,20,5];
+    var el3 = ['satisfyer','fuego',3,450,22];
+    var el4 = ['un gormiti bien sabroson','de agua y daire',4,150,1];
+    var arry = [el1,el2,el3,el4];
+//    setCookie('carrito',JSON.stringify(arry),9999999999);
     
     //Obtiene todo el contenido de la Cookie 'carrito' y va pasando todos los productos de la Cookie a líneas de pedido 
     var productos = JSON.parse(getCookie('carrito'));
     var precios;
+    var cont=0;
     for(var i=0;i<productos.length;i++){
-        anyadirProducto(productos);   
+        anyadirProducto(productos[i]);   
     }   
      
     //Añade una línea de pedido a la página
     function anyadirProducto(producto){
         var art = $('<article>').addClass('col-md-12 pb-2');
-        var tit = $('<span>').addClass('grande').html(producto[0]+'<br>');
-        var desc = $('<span>').addClass('medio').html(producto[1]+'<br>');
+        var tit = $('<span>').addClass('grande').html(producto[0]+' ');
+        var papelera = $('<img>').attr('src','/img/icons/papelera.svg').attr('alt','papelera').addClass('papeleraCesta').attr('id','pap'+cont);
+        var desc = $('<span>').addClass('medio').html('<br>'+producto[1]+'<br>');
         art.append(tit);
+        art.append(papelera);
         art.append(desc);
         var linea = $('<div>').addClass('row');
         art.append(linea);
@@ -31,6 +38,7 @@ $(function(){
         linea.append(cant);
         linea.append(tot);
         $('#productosCesta').append(art);  
+        cont++;
         calcularTotal();
     }    
 
@@ -50,9 +58,26 @@ $(function(){
         precios = JSON.stringify([dineroTotal,gastosDeEnvio]);
     }
     
+    //Controla el click sobre el boton de "pagar", te redirige a la página de pago si estas logueado y en caso contrario a la página de registro
     $('#botonPago').click(function(){
-        setCookie('preciosDeCesta',precios,45);
-        location.href="/pagar";
+//        if(Auth::user()!=null){
+            setCookie('preciosDeCesta',precios,45);
+            location.href="/pagar";
+//        }else{
+//            location.href="/register";
+//        }
+    });
+    
+    //Al clickar en el icono de la papelera elimina el elemento de la cesta y recarga la página
+    $('article').on('click','.papeleraCesta',function(){
+
+       var id = parseInt(this.id.substring(3,this.id.length));
+       var cesta = JSON.parse(getCookie('carrito'));
+       console.log(cesta);
+       cesta.splice(id, 1);
+       console.log(cesta);
+       setCookie('carrito',JSON.stringify(cesta),9999999999);
+       location.href="/cesta"
     });
     
     //Crea una cookie pasando el nombre, el valor y la fecha de caducidad    
