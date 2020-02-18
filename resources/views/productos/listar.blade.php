@@ -71,7 +71,7 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody-productos">
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>

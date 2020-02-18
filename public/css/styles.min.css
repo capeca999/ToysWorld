@@ -754,19 +754,19 @@ table td{
 .id-listar:hover{
     border: 2px solid #54609c;
 }
-tbody tr{
+#tbody-productos tr{
     color: gray;
     text-align: center;
 }
-tbody tr:hover{
+#tbody-productos tr:hover{
     background-color: #D8F0FD;
     color: black;
 }
-tbody tr img:hover{
+#tbody-productos tr img:hover{
     opacity: 2;
 }
 
-tbody tr img{
+#tbody-productos tr img{
     opacity: 0.2;
 }
 

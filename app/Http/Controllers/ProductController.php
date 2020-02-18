@@ -89,8 +89,6 @@ class ProductController extends Controller
 
     public static function getMostSelled()
     {
-
-
         $lineas = Line::all(['id_product', 'quantity'])->groupBy('id_product')->map(function ($item) {return $item->sum('quantity');})->toArray();
         asort($lineas);
         $lineas =  array_reverse($lineas, true);
@@ -100,12 +98,30 @@ class ProductController extends Controller
         foreach($lineas as $key=>$valor) {
             $products[] = ['producto'=>Product::find($key), 'cantidad'=>$valor];
         }
-
-
         return $products;
-
-
 
     }
 
+
+    /**
+     * Saca todos los productos
+     *
+     * @param  void
+     * @return json productos
+     */
+    public static function listarProductos(){
+        $productos = Product::all();
+
+        return $productos."AHHHHHHHHHHHHHH";
+    }
+
+    /**
+     * Saca todos los productos, que tiene relacion con la categoria
+     *
+     * @param  string $categoria
+     * @return json productos
+     */
+    public static function listarProductosCategoria($categoria){
+        return $productos = Product::all()->where('id_category', $categoria);
+    }
 }
