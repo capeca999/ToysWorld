@@ -1,5 +1,7 @@
 $(function(){
 
+    $('fieldset #categoria').selectpicker();
+
     /*MODIFICAR PRODUCTO (Añadir input)- Al hacer doble click creara un input en el td cliqueado*/
     $( "tr" ).on( "dblclick", "td", function() {
         if($(this).text() != ''){
@@ -115,6 +117,5 @@ $(function(){
         $(this).attr('title','Dar de baja');
         $(this).parent().parent().attr('id','');
     });
-
 
 });

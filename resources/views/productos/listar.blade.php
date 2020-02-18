@@ -1,12 +1,54 @@
 @extends('layouts.master')
 @section('contenido')
-<link rel="stylesheet" type="text/css" href="/css/estilo.css">
+
+@section('scripts')
 <script src="/js/listar-productos.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+@endsection
+
+@section('titulo')
+    - Listar Productos
+@endsection
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
+
+
 <div id="contenedor-listar">
     <form action="#" method="get">
         <div class="listar-productos">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="id-listar" id="nombre" aria-describedby="id" placeholder="Ejemplo: bicicleta">
+            <fieldset>
+                <legend for="nombre">Nombre</legend>
+                <input type="text" class="id-listar" id="nombre" aria-describedby="id" placeholder="Ejemplo: bicicleta">
+                <select id="vendidos" class="selectpicker">
+                    <option selected>Más Vendidos</option>
+                    <option>Menos Vendidos</option>
+                </select>
+            </fieldset><br><br>
+            <fieldset>
+                <legend for="categoria">Categoría/Provincia</legend>
+                Categoría
+                <select id="categoria" class="selectpicker" multiple data-live-search="true">
+                    <option>Seleccionar Todo</option>
+                    <option>Juguetes</option>
+                    <option>Juegos de mesa</option>
+                    <option>Relish</option>
+                </select>
+                Provincia de Usuarios
+                <select id="categoria" class="selectpicker" multiple data-live-search="true">
+                    <option>Seleccionar Todo</option>
+                    <option>Valencia</option>
+                    <option>Madrid</option>
+                    <option>Barcelona</option>
+                </select>
+            </fieldset><br><br>
+            <fieldset>
+                <legend for="categoria">Stock</legend>
+                <input type="checkbox" value="">Productos con poco o ningún Stock
+            </fieldset>
+
         </div>
     </form>
     <div class="container-fluid">
