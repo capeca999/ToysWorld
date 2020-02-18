@@ -574,6 +574,31 @@ div.social-links {
 }
 
 /* -------------------------- */
+
+/* CSS Página de pago */
+
+#tablaDePago1{
+    background-color:#ffb677;
+    border: 3px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#mainPaginaDePago{
+    background-color: #edf7fa;
+    padding-bottom: 80px;
+    padding-top: 35px;
+}
+
+.camposDir1{
+    width: 85%;
+}
+
+#numeroDirPago{
+    width: 10%;
+}
+
+/* -------------------------- */
 body{
     /*background-color: aqua;*/
     background-color:#EDF7FA;
