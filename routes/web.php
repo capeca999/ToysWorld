@@ -34,7 +34,10 @@ Route::group(['prefix' => 'usuario'], function(){
         return view('usuarios.perfil')->with('id',$id);
     });
     Route::get('registro/', function () {
-        return view('usuarios.registro');
+        return view('auth.register');
+    });
+    Route::get('login/', function () {
+        return view('auth.login');
     });
 
 });
