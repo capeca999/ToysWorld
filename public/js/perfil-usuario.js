@@ -1,5 +1,19 @@
 $(function(){
 
+
+    //HISTORIAL crear el a apartado de historiales
+    $.ajax({
+        url: "1/historial/",
+        method: "GET",
+        success: function(usuarios){
+            conosle.log(usuarios);
+        },
+        dataType: "json",
+    });
+
+
+
+
     //DOBLE CLICK en los SPAN PERFIL: Al hacer doble click sobre un span, vaciaremos el 'span' y crearemos un input
     $('#usuario-perfil').on('dblclick', '#contenedor-perfil span',function(){
         var valor=$(this).text();
@@ -7,18 +21,16 @@ $(function(){
         $(this).empty();
         var input=$('<input>');
         input.attr('id','perfil-input');
-        if($(this).attr('class') == 'nacimiento'){
-            input.prop('type','data');
+        if($(this).attr('id') == 'nacimiento'){
+            console.log('entra fecha');
+            input.attr('type','date');
+            input.val(valor);
+            console.log(valor);
             input.attr('placeholder',valor);
-
         }else{
             input.attr('type','text');
             input.attr('placeholder',valor);
-
-
         }
-
-
 
         $(this).append(input);
         input.focus();

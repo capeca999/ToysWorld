@@ -358,10 +358,6 @@ span {
     padding-right: 4%;
 }
 
-body{
-    background-color:floralwhite;
-}
-
 /* ------------------------------- */
 
 body{
@@ -717,7 +713,7 @@ div.social-links {
 }
 /*
 |--------------------------------------------------------------------------
-| LISTAR Productos/Usuarios
+| LISTAR Productos
 |--------------------------------------------------------------------------
 */
 
@@ -867,4 +863,27 @@ table td{
     margin-left: 80%;
     width: 40px;
     height: 40px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| LISTAR Usuarios
+|--------------------------------------------------------------------------
+*/
+.tabla-usuarios th{
+    text-align: center;
+}
+#tbody-usuarios tr{
+    color: gray;
+}
+#tbody-usuarios tr:hover,#seleccionado td{
+    background-color: #D8F0FD;
+    color: black;
+}
+#tbody-usuarios tr img:hover,#seleccionado{
+    opacity: 2;
+}
+
+#tbody-usuarios tr img{
+    opacity: 0.2;
 }

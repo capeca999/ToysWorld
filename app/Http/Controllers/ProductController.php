@@ -128,7 +128,7 @@ class ProductController extends Controller
     public static function modificarProducto($id,$atributo,$valor){
         $producto = Product::find($id);
         $producto->$atributo = $valor;
-        return $producto->save(); 
+        $producto->save(); 
     }
     
     public static function modificarEstado($id,$estado){

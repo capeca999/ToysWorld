@@ -33,12 +33,23 @@ Route::group(['prefix' => 'usuario'], function(){
     Route::get('perfil/{id}', function ($id) {
         return view('usuarios.perfil')->with('id',$id);
     });
+    
+    Route::get('perfil/{id}/historial/', 'UserController@historialUsuario');
+
+
+
     Route::get('registro/', function () {
         return view('auth.register');
     });
     Route::get('login/', function () {
         return view('auth.login');
     });
+
+    //LISTAR USUARIOS
+    Route::get('listar/', function () {
+        return view('usuarios.listar-usuarios');
+    });
+    Route::get('listar/mostrar/', 'UserController@listarUsuarios');
 
 });
 
@@ -59,12 +70,12 @@ Route::group(['prefix' => 'producto'], function(){
 
     //LISTAR PRODUCTOS
     Route::get('listar/', function () {
-        return view('productos.listar');
+        return view('productos.listar-productos');
     });
     Route::get('listar/mostrar/', 'ProductController@listarProductos');
-    
+
     Route::get('listar/modificar/{id}/{atributo}/{valor}', 'ProductController@modificarProducto');
-    
+
     Route::get('listar/{categoria}', 'ProductController@listarProductosCategoria');
 
 
