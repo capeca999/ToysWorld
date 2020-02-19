@@ -11,7 +11,7 @@ class FkLin extends Migration{
      * @return void
      */
     public function up(){
-        Schema::table('line_product', function (Blueprint $table) {
+        Schema::table('lines', function (Blueprint $table) {
             $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('id_order')->references('id')->on('orders')->onDelete('cascade');
         });
@@ -23,7 +23,7 @@ class FkLin extends Migration{
      * @return void
      */
     public function down(){
-        Schema::table('line_product', function (Blueprint $table) {
+        Schema::table('lines', function (Blueprint $table) {
             $table->dropForeign('id_product');
             $table->dropForeign('id_order');
         });

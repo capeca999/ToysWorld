@@ -11,7 +11,7 @@ class LineaPedido extends Migration{
      * @return void
      */
     public function up(){
-        Schema::create('line_product', function (Blueprint $table) {
+        Schema::create('lines', function (Blueprint $table) {
             $table->bigInteger('id_product')->unsigned();
             $table->bigInteger('id_order')->unsigned();
             $table->integer('quantity');
@@ -27,6 +27,6 @@ class LineaPedido extends Migration{
      * @return void
      */
     public function down(){
-        Schema::dropIfExists('linea_product');
+        Schema::dropIfExists('lines');
     }
 }

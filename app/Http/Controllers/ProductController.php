@@ -87,20 +87,22 @@ class ProductController extends Controller
 
 
 
-    public static function getMostSelled(){
-
+    public static function getMostSelled()
+    {
         $lineas = Line::all(['id_product', 'quantity'])->groupBy('id_product')->map(function ($item) {return $item->sum('quantity');})->toArray();
         asort($lineas);
         $lineas =  array_reverse($lineas, true);
         $lineas = array_slice($lineas, 0,3, true);
 
+
         foreach($lineas as $key=>$valor) {
             $products[] = ['producto'=>Product::find($key), 'cantidad'=>$valor];
         }
-
         return $products;
+
     }
-    
+
+
     /**
      * Saca todos los productos
      *
@@ -110,17 +112,30 @@ class ProductController extends Controller
     public static function listarProductos(){
         $productos = Product::all();
 
-        return $productos."PAUUUUUUUUUUUUUU";
+        return json_encode($productos);
     }
 
-     /**
+    /**
      * Saca todos los productos, que tiene relacion con la categoria
      *
      * @param  string $categoria
      * @return json productos
      */
     public static function listarProductosCategoria($categoria){
-        $productos = Product::all()->where('id_category', $categoria);
+        return $productos = Product::all()->where('id_category', $categoria);
     }
+
+    public static function modificarProducto($id,$atributo,$valor){
+        $producto = Product::find($id);
+        $producto->$atributo = $valor;
+        $producto->save(); 
+    }
+    
+    public static function modificarEstado($id,$estado){
+        $producto = Product::find($id);
+        $producto->status = $estado;
+        $producto->save();
+    }
+
 
 }
