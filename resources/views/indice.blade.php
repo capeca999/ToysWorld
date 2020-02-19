@@ -1,8 +1,5 @@
 @extends('layouts.master')
 @section('contenido')
-
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -18,17 +15,15 @@
                 </div>
                 <div class="carousel-item">
                     <div class="jumbotron pulse animated hero-segunda carousel-hero">
-                        <h1 class="hero-title">Hero Photography</h1>
-                        <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam.</p>
+                        <h1 class="hero-title">Lo mejor para nuestros pequeños</h1>
+                        <p class="hero-subtitle">Nuestros hijos son lo más importante que tenemos y por ello merecen lo mejor</p>
 
                     </div>
                 </div>
                 <div class="carousel-item active">
                     <div class="jumbotron pulse animated hero-tercera carousel-hero">
-                        <h1 class="hero-title">Hero Technology</h1>
-                        <p class="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                            dapibus ac facilisis in, egestas eget quam.</p>
+                        <h1 class="hero-title">Ofertas de primavera</h1>
+                        <p class="hero-subtitle">Disfruta ya de los mejores productos rebajados más que nunca en ToysWorld</p>
 
                     </div>
                 </div>
