@@ -1317,11 +1317,21 @@ div.social-links {
 }    
 
 /* -------------------------- */
+    
+/* CSS Página de pago */
+
+.tablasDePago{
+    background-color:#ffb677;
+    border: 3px solid black;
+    border-collapse: collapse;     
+}    
+    
+/* -------------------------- */
+
 body{
     /*background-color: aqua;*/
     background-color:#EDF7FA;
 }
-
 
 /*
 |--------------------------------------------------------------------------
