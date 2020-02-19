@@ -35,11 +35,11 @@ Route::get('cesta/pagar', function () {
 */
 Route::group(['prefix' => 'usuario'], function(){
 
-    Route::get('perfil/{id}', function ($id) {
-        return view('usuarios.perfil')->with('id',$id);
+    Route::get('perfil/{nif}', function ($nif) {
+        return view('usuarios.perfil')->with('nif',$nif);
     });
     
-    Route::get('perfil/{id}/historial/', 'UserController@historialUsuario');
+    Route::get('perfil/{nif}/historial/', 'UserController@historialUsuario');
 
 
 

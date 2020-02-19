@@ -112,7 +112,7 @@ class ProductController extends Controller
     public static function listarProductos(){
         $productos = Product::all();
 
-        return $productos;
+        return json_encode($productos);
     }
 
     /**

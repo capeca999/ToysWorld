@@ -1,13 +1,14 @@
 $(function(){
+            console.log('holaddd');
 
     //TABLA crear las filas de la tabla con sus productos
     $.ajax({
-        url: "listar/mostrar/",
+        url: "/producto/listar/mostrar/",
         method: "GET",
         success: function(productos){
             anyadirTabla(productos);
         },
-        dataType: "json",
+        dataType: "json"
     });
 
     function anyadirTabla(productos){
@@ -89,7 +90,7 @@ $(function(){
         }else{
             if(!comprobacionModificacion(atributo,$(this).val())){
                 $.ajax({
-                    url: "listar/modificar/"+id+"/"+atributo+"/"+$(this).val(),
+                    url: "/producto/listar/modificar/"+id+"/"+atributo+"/"+$(this).val(),
                     method: "GET",
                 });
 
@@ -210,7 +211,7 @@ $(function(){
 
 
     function modificarEstado(id,estado){
-        var ruta= "listar/modificar/"+id+"/status/Disponible";
+        var ruta= "/producto/listar/modificar/"+id+"/status/Disponible";
         if(estado != "Disponible"){
             ruta= "listar/modificar/"+id+"/status/No_Disponible";
         }
