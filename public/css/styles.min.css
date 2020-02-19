@@ -514,6 +514,11 @@ body{
 
 /* Tamaño letras */
 
+.muygrande{
+    font-size: 3em;   
+    font-weight: bolder;   
+}
+
 .grande{
     font-size: 2em;   
     font-weight: bolder;
@@ -749,6 +754,31 @@ div.social-links {
 
 #numeroDirPago{
     width: 10%;
+}
+
+/* -------------------------- */
+
+/* CSS Auxilares */
+
+.tituloDeAuxiliares1{
+    border: 2px solid black;
+    margin-top: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    color: black;
+    background-color: #ffb677;
+}
+
+.tituloDeAuxiliares2{
+    border: 2px solid black;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    text-align: left;
+    background-color: #FDD4AC;
+    margin-bottom: 3%;
 }
 
 /* -------------------------- */

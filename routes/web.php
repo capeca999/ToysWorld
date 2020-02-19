@@ -28,8 +28,6 @@ Route::group(['prefix' => 'usuario'], function(){
     
     Route::get('perfil/historial/', 'UserController@historialUsuario');
 
-
-
     Route::get('registro/', function () {
         return view('auth.register');
     });
@@ -70,12 +68,24 @@ Route::group(['prefix' => 'producto'], function(){
 
     Route::get('listar/{categoria}', 'ProductController@listarProductosCategoria');
 
-
-
 });
-
-
 
 Route::get('cesta/',function(){
     return view('cesta');
+});
+
+Route::get('/terminosYCondiciones/',function(){
+    return view('terminosYCondiciones');
+});
+
+Route::get('/nuestroCompromiso/',function(){
+    return view('nuestroCompromiso');
+});
+
+Route::get('/sobreNosotros/',function(){
+    return view('sobreNosotros');
+});
+
+Route::get('/politicaDePrivacidad/',function(){
+    return view('politicaDePrivacidad');
 });
