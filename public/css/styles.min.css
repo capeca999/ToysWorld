@@ -1309,6 +1309,12 @@ div.social-links {
     border-collapse: collapse;
     padding:3px;
 }
+    
+.papeleraCesta{    
+    width: 2.5%;
+    cursor: pointer;
+    padding-bottom: 1.5%;
+}    
 
 /* -------------------------- */
 body{
