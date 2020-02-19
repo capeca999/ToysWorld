@@ -29,11 +29,11 @@
 
             <div class="col-md-3 col-12 ml-4 ml-sm-5 ml-md-0 mt-4">
                @if(Auth::user()==null)
-                <a href="usuarios/login"><img class="cursorHand iconos ml-3" src="/img/icons/login.svg" id="loginHeader" alt="Login" title="Login"></a>
-                <a href="usuarios/registro"><img class="cursorHand iconos ml-5" src="/img/icons/register.svg" id="registerHeader" alt="Registrarse" title="Registrarse"></a>
+                <a href="{{url('login/')}}"><img class="cursorHand iconos ml-3" src="/img/icons/login.svg" id="loginHeader" alt="Login" title="Login"></a>
+                <a href="{{url('registro/')}}"><img class="cursorHand iconos ml-5" src="/img/icons/register.svg" id="registerHeader" alt="Registrarse" title="Registrarse"></a>
                @endif
-                <a href="{{url('usuario/cesta')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
-                <a href="{{url('usuario/perfil/1564')}}"><img class="cursorHand iconos ml-5" src="/img/avatar.jpg" id="avatarHeader" alt="Perfil" title="Perfil"></a>
+                <a href="{{url('/cesta')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
+                <a href="{{url('usuario/perfil/1564')}}"><img class="cursorHand iconos ml-5" src="/img/avatar.png" id="avatarHeader" alt="Perfil" title="Perfil"></a>
             </div>
         </div>
     </header>   
