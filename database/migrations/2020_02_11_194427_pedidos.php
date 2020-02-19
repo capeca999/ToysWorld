@@ -15,7 +15,7 @@ class Pedidos extends Migration{
             $table->bigIncrements('id');
             $table->timestamp('date');
             $table->double('total_price',8,2);
-            $table->enum('payment_method', ['PayPal', 'Tarjeta']);
+            $table->enum('payment_methods', ['PayPal', 'Tarjeta']);
             $table->string('nif');
             $table->timestamps();
         });

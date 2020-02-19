@@ -11,7 +11,7 @@ class FkMet extends Migration{
      * @return void
      */
     public function up(){
-        Schema::table('payment_method', function (Blueprint $table) {
+        Schema::table('payment_methods', function (Blueprint $table) {
             $table->foreign('nif')->references('nif')->on('users')->onDelete('cascade');
         });
     }
@@ -22,7 +22,7 @@ class FkMet extends Migration{
      * @return void
      */
     public function down(){
-        Schema::table('payment_method', function (Blueprint $table) {
+        Schema::table('payment_methods', function (Blueprint $table) {
             $table->dropForeign('nif');
         });
     }
