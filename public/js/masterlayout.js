@@ -4,7 +4,7 @@ $(function(){
     //Añade un controlador de click para redirigir a la página de búsqueda con el valor del input (siempre que no esta vacío)
     $('#lupaHeader').click(function(){
        if($('#inputHeader').val()!=''){
-            var ventana = 'productos/busqueda/'+$('#inputHeader').val();  
+            var ventana = '/productos/busqueda/'+$('#inputHeader').val();  
             location.href=ventana; 
        }else{
             //Pone de color rojo el fondo del input en caso de que el valor sea vacío
