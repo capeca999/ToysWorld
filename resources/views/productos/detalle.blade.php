@@ -1,11 +1,14 @@
 @extends('layouts.master')
 @section('contenido')
+
+@section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+@endsection
 
-<link rel="stylesheet" type="text/css" href="/css/estilo.css">
-<h1>Perfil del Producto {{$id}}</h1>
-
+@section('titulo')
+    - Detalle Producto
+@endsection
 
 <div class="contenedor-producto">
     <div class="container">
@@ -30,11 +33,11 @@
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      
+
                     </a>
                     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                       
+
                     </a>
                 </div>
 
@@ -49,11 +52,15 @@
 
                     <div class="d-flex">
                         <span class="precio-producto  mr-auto">35,50€</span><br><br>
-                        <span class="descuento-producto">Info de DESCUENTO</span>  
+                        <span class="descuento-producto">Info de DESCUENTO</span>
                     </div>
-
+                    
+                    <form id="cantidad-producto">                    
+                        <input type="number" name="cantidad" min="1" max="10" value="1">
+                    </form>
+                    
                     <br>
-                    <button id="boton-cesta" type="button" class="btn btn-primary btn-sm detalle-boton">Añadir Carrito</button>
+                    <button id="detalle-boton" type="button" class="btn btn-primary btn-sm detalle-boton">Añadir Carrito</button>
 
                 </div>
                 <div class="detalle-producto">

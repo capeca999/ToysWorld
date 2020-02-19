@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>ToysWorld @yield('titulo')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <!-- BOOTSTRAP -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Icono -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--JQUERY -->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/styles.min.css">
+    <!-- JavaScript -->
     <script src="/js/masterlayout.js"></script>
     @yield('scripts')
 </head>
@@ -15,19 +21,19 @@
     <header>
         <div class="row ml-5 mr-0">
             <div class="col-md-9 col-12 mt-md-2 mt-5 mb-0 pb-0">
-                <a href="/"><img id="logoHeader" class="cursorHand" src="/img/caballo.png"></a>
+                <a href="{{url('/')}}"><img id="logoHeader" class="cursorHand" src="/img/caballo.png"></a>
                 <img id="tituloHeader" src="/img/titulo.png">
-                <a class="d-none d-md-inline-flex " href="productos/busqueda"><img class="cursorHand iconos ml-5" src="/img/logomenuBusqueda.png" alt="Busqueda"></a>
+                <a class="d-none d-md-inline-flex " href="{{url('/productos/busqueda/')}}"><img class="cursorHand iconos ml-5" src="/img/logomenuBusqueda.png" alt="Busqueda"></a>
                 <input id="inputHeader" class="ml-5" type="text"  placeholder="Buscar juguetes"><img id="lupaHeader" class="cursorHand" src="/img/lupa.png" alt="lupa">
             </div>
 
             <div class="col-md-3 col-12 ml-4 ml-sm-5 ml-md-0 mt-4">
                @if(Auth::user()==null)
-                <a href="usuarios/login"><img class="cursorHand iconos ml-3" src="/img/icons/login.svg" id="loginHeader" alt="Login" title="Login"></a>
-                <a href="usuarios/registro"><img class="cursorHand iconos ml-5" src="/img/icons/register.svg" id="registerHeader" alt="Registrarse" title="Registrarse"></a>
+                <a href="{{url('/login/')}}"><img class="cursorHand iconos ml-3" src="/img/icons/login.svg" id="loginHeader" alt="Login" title="Login"></a>
+                <a href="{{url('/registro/')}}"><img class="cursorHand iconos ml-5" src="/img/icons/register.svg" id="registerHeader" alt="Registrarse" title="Registrarse"></a>
                @endif
-                <a href="{{url('usuario/cesta')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
-                <a href="{{url('usuario/perfil/1564')}}"><img class="cursorHand iconos ml-5" src="/img/avatar.jpg" id="avatarHeader" alt="Perfil" title="Perfil"></a>
+                <a href="{{url('/cesta/')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
+                <a href="{{url('/usuario/perfil/1564')}}"><img class="cursorHand iconos ml-5" src="/img/avatar.png" id="avatarHeader" alt="Perfil" title="Perfil"></a>
             </div>
         </div>
     </header>   
