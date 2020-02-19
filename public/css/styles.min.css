@@ -356,15 +356,16 @@ span {
 #contenedorPrincipal{
     padding-left: 4%;
     padding-right: 4%;
+    background-color: #edf7fa;
 }
+
+
 
 /* ------------------------------- */
 
 body{
-    /*background-color: aqua;*/
-    background-color:#EDF7FA;
+    background-color:#edf7fa;
 }
-
 
 /* Tamaño letras */
 
