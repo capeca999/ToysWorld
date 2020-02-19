@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('/toys/{pagina}/{nombre?}/{cantidad?}', 'ApiController@getToys');
+Route::get('/category/{categoria}', 'ApiController@getCategory');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
