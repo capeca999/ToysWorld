@@ -37,7 +37,7 @@
                     <option>Relish</option>
                 </select>
                 Provincia de Usuarios
-                <select id="categoria" class="selectpicker" multiple data-live-search="true">
+                <select id="provincia" class="selectpicker" multiple data-live-search="true">
                     <option>Seleccionar Todo</option>
                     <option>Valencia</option>
                     <option>Madrid</option>
@@ -45,7 +45,7 @@
                 </select>
             </fieldset><br><br>
             <fieldset>
-                <legend for="categoria">Stock</legend>
+                <legend for="stock">Stock</legend>
                 <input type="checkbox" value="">Productos con poco o ningún Stock
             </fieldset>
 
@@ -53,13 +53,13 @@
     </form>
     <div class="container-fluid">
         <div class="row">
-            <table class="table table-responsive text-center">
+            <table class="tabla-productos table table-responsive text-center">
                 <thead class="cabecera-tabla">
                     <tr>
                         <th scope="col">ID</th>
+                        <th scope="col">Impuesto %</th>
+                        <th scope="col">Descuento %</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Impuesto</th>
-                        <th scope="col">Descuento</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Marca</th>
                         <th scope="col">Peso</th>
@@ -71,7 +71,7 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody id="tbody-productos">
+                <tbody id="tbody-productos" class="fila-alta">
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>

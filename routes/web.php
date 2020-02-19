@@ -58,12 +58,16 @@ Route::group(['prefix' => 'producto'], function(){
     });
 
     //LISTAR PRODUCTOS
-    Route::get('listar/', 'ProductController@listarProductos');
+    Route::get('listar/', function () {
+        return view('productos.listar');
+    });
+    Route::get('listar/mostrar/', 'ProductController@listarProductos');
+    
+    Route::get('listar/modificar/{id}/{atributo}/{valor}', 'ProductController@modificarProducto');
+    
     Route::get('listar/{categoria}', 'ProductController@listarProductosCategoria');
 
-//    Route::get('listar/', function () {
-//        return view('productos.listar');
-//    });
+
 
 });
 

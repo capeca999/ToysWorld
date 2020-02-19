@@ -754,6 +754,7 @@ table td{
 .id-listar:hover{
     border: 2px solid #54609c;
 }
+
 #tbody-productos tr{
     color: gray;
     text-align: center;
@@ -803,15 +804,18 @@ table td{
     opacity: 2;
 
 }
-
-#eliminado:hover{
-    background-color: #FF5252;
-    color:#E3E3E3;
+.tabla-productos th{
+    text-align: center;
 }
 
-#eliminado{
-    background-color: #FF8C8C;
-    color:#E3E3E3;
+.eliminado:hover{
+    background-color: #FF5252 !important;
+    color:#E3E3E3 !important;
+}
+
+.eliminado{
+    background-color: #FF8C8C !important;
+    color:#E3E3E3 !important;
 }
 
 /*

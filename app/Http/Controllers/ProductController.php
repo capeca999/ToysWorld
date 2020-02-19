@@ -112,7 +112,7 @@ class ProductController extends Controller
     public static function listarProductos(){
         $productos = Product::all();
 
-        return $productos."AHHHHHHHHHHHHHH";
+        return $productos;
     }
 
     /**
@@ -124,4 +124,18 @@ class ProductController extends Controller
     public static function listarProductosCategoria($categoria){
         return $productos = Product::all()->where('id_category', $categoria);
     }
+
+    public static function modificarProducto($id,$atributo,$valor){
+        $producto = Product::find($id);
+        $producto->$atributo = $valor;
+        return $producto->save(); 
+    }
+    
+    public static function modificarEstado($id,$estado){
+        $producto = Product::find($id);
+        $producto->status = $estado;
+        $producto->save();
+    }
+
+
 }
