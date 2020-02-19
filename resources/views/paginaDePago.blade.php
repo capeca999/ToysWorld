@@ -12,7 +12,7 @@
 <div id="mainPaginaDePago">
    <section class="row ml-5">
     <article class="col-md-5 p-5" id="productosCesta">
-        <table cellpadding="15" id="tablasDePago">
+        <table cellpadding="15" class="tablasDePago">
            <form action="post">
             <tr>
                 <td class="text-center grande" colspan="2">Envío</td><td></td>
@@ -264,7 +264,7 @@
     </article>
            
     <article class="col-md-6 p-5">
-        <table cellpadding="15" id="tablasDePago">
+        <table cellpadding="15" class="tablasDePago">
            <form action="post">
             <tr>
                 <td class="text-center grande" colspan="2">Resumen de pedido</td><td></td>

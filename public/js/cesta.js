@@ -6,15 +6,17 @@ $(function(){
     var el3 = ['satisfyer','fuego',3,450,22];
     var el4 = ['un gormiti bien sabroson','de agua y daire',4,150,1];
     var arry = [el1,el2,el3,el4];
-//    setCookie('carrito',JSON.stringify(arry),9999999999);
+    setCookie('carrito',JSON.stringify(arry),9999999999);
     
     //Obtiene todo el contenido de la Cookie 'carrito' y va pasando todos los productos de la Cookie a líneas de pedido 
     var productos = JSON.parse(getCookie('carrito'));
     var precios;
     var cont=0;
-    for(var i=0;i<productos.length;i++){
-        anyadirProducto(productos[i]);   
-    }   
+    if(productos!=null){
+        for(var i=0;i<productos.length;i++){
+            anyadirProducto(productos[i]);   
+        }   
+    }
      
     //Añade una línea de pedido a la página
     function anyadirProducto(producto){
@@ -70,14 +72,13 @@ $(function(){
     
     //Al clickar en el icono de la papelera elimina el elemento de la cesta y recarga la página
     $('article').on('click','.papeleraCesta',function(){
-
        var id = parseInt(this.id.substring(3,this.id.length));
        var cesta = JSON.parse(getCookie('carrito'));
        console.log(cesta);
        cesta.splice(id, 1);
        console.log(cesta);
        setCookie('carrito',JSON.stringify(cesta),9999999999);
-       location.href="/cesta"
+       location.href="/cesta/"
     });
     
     //Crea una cookie pasando el nombre, el valor y la fecha de caducidad    
