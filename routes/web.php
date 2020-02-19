@@ -14,7 +14,12 @@
 */
 
 Route::get('/', 'PrincipalController@index');
-Auth::routes();
+
+Auth::routes(['verify' => true]);
+
+Route::get('/productos/busqueda', function () {
+    return view('search');
+});
 
 
 Route::get('cesta/pagar', function () {
