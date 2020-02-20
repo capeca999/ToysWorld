@@ -100,7 +100,6 @@ class UserController extends Controller
     public static function listarUsuarios(){
         $usuarios = User::all()
             ->where('role', 'Usuario');
-
         return $usuarios;
     }
 
@@ -114,7 +113,7 @@ class UserController extends Controller
         return $historiales;
     }
     public static function historialAdmin($nif){
-        $historiales = User::select('lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
+        $historiales = User::select('','lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
             ->join('orders','users.nif','=','orders.nif')
             ->join('lines','orders.id','=','lines.id_order')
             ->join('products','lines.id_product','=','products.id')
