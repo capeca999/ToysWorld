@@ -1,23 +1,15 @@
 @extends('layouts.master')
-@section('contenido')
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
+
+@section('titulo')
+   - Página de Búsqueda
+@endsection
+      
+@section('scripts')
     <script src="/js/cargar_mas.js"></script>
-
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/styles.min.css">
-
-    </head>
-
-    <body>
-
+@endsection
+                  
+@section('contenido')
 <input type="hidden" id="valorBuscar" value="{{$nombre ?? ''}}">
 
     <form class="form-inline">
