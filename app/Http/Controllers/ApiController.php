@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Categorie;
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
@@ -52,7 +52,7 @@ class ApiController extends Controller
     }
 
     public function  getAllCategory(){
-        return Categorie::all();
+        return Category::all();
     }
 
 
