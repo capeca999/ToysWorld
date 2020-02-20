@@ -51,14 +51,14 @@ Route::group(['prefix' => 'usuario'], function(){
 
     Route::middleware('auth:api')->get('perfil/historial/', 'UserController@historialUsuario');
 
-    
+
     //GESTIÓN LISTAR USUARIOS
     Route::get('listar/historial/{nif}', 'UserController@historialAdmin');
     Route::get('listar/historial/importe/{nif}/{importe}', 'UserController@historialImporte');
     Route::get('listar/historial/fecha/{nif}/{fecha}', 'UserController@historialFecha');
 
-    
-    
+
+
     Route::get('registro/', function () {
         return view('auth.register');
     });
@@ -89,13 +89,13 @@ Route::get('/sobreNosotros/',function(){
 Route::get('/politicaDePrivacidad/',function(){
     return view('politicaDePrivacidad');
 });
-    
+
 Route::get('cesta/',function(){	
     return view('cesta');	   
 }); 	
-                              
-                              
-                    
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -107,21 +107,21 @@ Route::get('cesta/',function(){
 */
 Route::group(['prefix' => 'producto'], function(){
 
-/*    Route::get('detalle/{id}', function ($id) {
-        return view('productos.detalle')->with('id',$id);
-    });*/
-
     Route::get('detalle/{id}', 'ProductController@mostrarProducto');
 
-    //LISTAR PRODUCTOS
-    Route::get('listar/', function () {
-        return view('productos.listar-productos');
-    });
+
+    //LISTAR PRODUCTO
+    Route::get('listar/', 'ProductController@inicioFiltrarProductos');
+
     Route::get('listar/mostrar/', 'ProductController@listarProductos');
 
     Route::get('listar/modificar/{id}/{atributo}/{valor}', 'ProductController@modificarProducto');
 
-    Route::get('listar/{categoria}', 'ProductController@listarProductosCategoria');
+    Route::get('listar/stock/', 'ProductController@pocoStockProducto');
+
+    Route::get('listar/nombre/{nombre}', 'ProductController@nombreProducto');
+
+    Route::get('listar/categoria/{categoria}/{vendido}', 'ProductController@categoriaProducto');
 
 });
 
