@@ -25,7 +25,7 @@
             </fieldset><br><br>
             <fieldset>
                 <legend>Importe</legend>
-                <input type="number" id="importe" class="id-listar">
+                <input type="number" id="importe" class="id-listar" min="0">
             </fieldset><br><br>
         </div>
     </form>
@@ -43,31 +43,20 @@
                     </tr>
                 </thead>
                 <tbody id="tbody-usuarios" class="fila-alta">
-                    <tr>
-                        <td class="id-usuario" scope="row">1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr> 
-                        <td class="id-usuario" scope="row">2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td class="id-usuario" scope="row">2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
     </div>
     <hr>
+    <div id="contenedor-historial">
+        <h1>Historial de Pedidos</h1>
+        <hr>
+        <div id="historiales">
+
+        </div>
+        <div id="listar-user-error"></div>
+
+    </div>
 </div>
 @endsection
