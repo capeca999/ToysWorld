@@ -1,8 +1,21 @@
+
+
 <?php
-Route::get('/home','PrincipalController@index' );
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
 Route::get('/', 'PrincipalController@index');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/productos/busqueda', function () {
     return view('search');
@@ -22,14 +35,25 @@ Route::get('cesta/pagar', function () {
 */
 Route::group(['prefix' => 'usuario'], function(){
 
-    Route::get('perfil/', function ($nif) {
+    /*Route::get('perfil/{nif}', function ($nif) {
         return view('usuarios.perfil')->with('nif',$nif);
     });
+    Route::get('perfil/{nif}/historial/', 'UserController@historialUsuario');
+*/
+    Route::middleware('auth:api')->get('perfil/', function () {
+        return view('usuarios.perfil');
+    });
+
+    Route::middleware('auth:api')->get('perfil/historial/', 'UserController@historialUsuario');
+
     
-    Route::get('perfil/historial/', 'UserController@historialUsuario');
+    //GESTIÓN LISTAR USUARIOS
+    Route::get('listar/historial/{nif}', 'UserController@historialAdmin');
+    Route::get('listar/historial/importe/{nif}/{importe}', 'UserController@historialImporte');
+    Route::get('listar/historial/fecha/{nif}/{fecha}', 'UserController@historialFecha');
 
-
-
+    
+    
     Route::get('registro/', function () {
         return view('auth.register');
     });

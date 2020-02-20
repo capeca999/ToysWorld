@@ -1,16 +1,52 @@
 $(function(){
 
-
     //HISTORIAL crear el a apartado de historiales
     $.ajax({
-        url: "1/historial/",
+        url: "/usuario/perfil/historial/",
         method: "GET",
-        success: function(usuarios){
-            conosle.log(usuarios);
-        },
-        dataType: "json",
+        success: function(historiales){
+            console.log(historiales);
+            crearHistorial(historiales);
+        }
     });
 
+    //GENERA HISOTIRIALES a partir de lo que traer la consulta ajax
+    function crearHistorial(historiales){
+
+        $('#historiales').empty();
+
+        for(var i = 0 ; i<historiales.length ; i++){
+
+            var div_contenedor=$('<div>');
+            $('#historiales').append(div_contenedor);
+            var cont=0;
+
+            for(var clave in historiales[i]){
+                var historial= historiales[i][clave];
+                var div_historial = $('<div>');
+                div_historial.attr('id','historial'+i);
+                var div1=$('<div>');
+                //DIV 1-------------------------
+                div1.addClass('d-flex');
+                div1.html('Nombre &nbsp;&nbsp;<span id="nombre" class="nombre mr-auto">'+historiales[i]['name']+'</span>Orden de Pedido:&nbsp;&nbsp;<span class="id" id="order">'+historiales[i]['id_order']+'</span>');
+                var div2=$('<div>');
+
+                div2.html('Precio&nbsp;&nbsp;<span id="precio" class="precio">'+historiales[i]['price']+'€</span><br>Cantidad&nbsp;&nbsp;<span id=cantidad class="cantidad">'+historiales[i]['quantity']+'</span><br>Método de pago&nbsp;&nbsp;<span id="pago" class="metodopago">'+historiales[i]['payment_method']+'</span><br>');
+
+                var div3=$('<div>');
+                div3.addClass('d-flex');
+                div3.html('  Precio Final&nbsp;&nbsp;<span id="precio" class="precio mr-auto">'+historiales[i]['total_price']+'€</span>Fecha de Compra&nbsp;&nbsp;<span id="fecha" class="compra">'+historiales[i]['date']+'</span><br>');
+                
+                cont++;
+            }
+
+            div_contenedor.append(div1);
+            div_contenedor.append(div2);
+            div_contenedor.append(div3);
+            div_contenedor.append('<hr>');
+        }
+
+    }
 
 
 
