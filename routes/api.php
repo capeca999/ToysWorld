@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/toys/{pagina}/{nombre?}/{cantidad?}', 'ApiController@getToys');
+Route::get('/category/{pagina}/{categoria}/{cantidad?}', 'ApiController@getCategory');
 Route::get('/category/{categoria}', 'ApiController@getCategory');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

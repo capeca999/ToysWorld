@@ -1,6 +1,12 @@
 @extends('layouts.master')
 
 @section('contenido')
+
+    <script src="/js/refresh.js">
+
+
+    </script>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -102,6 +108,10 @@
                             </div>
                         </div>
 
+
+
+
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -109,12 +119,13 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
+
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
@@ -123,6 +134,29 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+
+                        <div class="form-group{{$errors->has('captcha') ? ' has-error' : ''}} row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
+
+                            <div class="col-md-6">
+
+                                <div class="captcha">
+                                    <span>  {!! captcha_img() !!} </span>
+                                    <button type="button" id="refresh" class="btn btn-success btn-refresh"> Refresh</button>
+                                </div>
+
+                                <input type="text" id="captcha" class="form-control" placeholder="Enter Captcha" name="captcha">
+
+                                @if ($errors->has('captcha'))
+                                    <span class="help-block">
+
+                                        <strong>{{$errors->first('captcha')}}</strong>
+                                    </span>
+@endif
+                            </div>
+                        </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

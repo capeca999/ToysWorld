@@ -29,7 +29,12 @@ class LoginController extends Controller
    // protected $redirectTo = RouteServiceProvider::HOME;
 
 
+    public function logout() {
+        Auth::logout();
+        return redirect('/');
+    }
 
+    
     protected $redirectTo = '/';
     /**
      * Create a new controller instance.

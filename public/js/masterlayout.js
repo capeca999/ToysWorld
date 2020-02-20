@@ -16,5 +16,12 @@ $(function(){
     $('#inputHeader').focus(function(){
        $(this).css('background-color','white'); 
     });
+
+$('#logout').click(function(event){
+    event.preventDefault();
+    $('#frm-logout').submit();
+});
+
+
     
 });

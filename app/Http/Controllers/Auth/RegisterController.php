@@ -57,6 +57,7 @@ class RegisterController extends Controller
             'date_of_birth' =>['required', 'date'],
             'surname1' =>['nullable',  'string', 'min:2'],
             'surname2' =>['nullable',  'string', 'min:2'],
+            'captcha' => 'required|captcha'
         ]);
     }
 

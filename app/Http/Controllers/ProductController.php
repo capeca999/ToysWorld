@@ -87,6 +87,29 @@ class ProductController extends Controller
 
 
 
+
+    public  function  getToys($pagina, $cantidad=21, $nombreToy=""){
+        if($cantidad<=0){
+            $cantidad=21;
+        }
+        if ($pagina < 1){
+            $pagina=1;
+
+        }
+
+        if(strlen($nombreToy)>0){
+            return Product::all()->where('name','like', $nombreToy)->skip(($pagina-1)*$cantidad)->take($cantidad)->toJson();
+        }
+        else{
+            return Product::all()->skip(($pagina-1)*$cantidad)->take($cantidad)->toJson();
+        }
+
+        //      return json_encode(Product::all()->take(($pagina*21)));
+    }
+
+
+
+
     public static function getMostSelled()
     {
         $lineas = Line::all(['id_product', 'quantity'])->groupBy('id_product')->map(function ($item) {return $item->sum('quantity');})->toArray();

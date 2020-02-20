@@ -12,14 +12,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/home','PrincipalController@index' );
 Route::get('/', 'PrincipalController@index');
 
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::get('/productos/busqueda', function () {
     return view('search');
 });
+
+
+Route::get('watermark-image', 'WaterMarkController@imageWatermark');
+Route::get('watermark-text', 'WaterMarkController@textWatermark');
+
 
 
 Route::get('cesta/pagar', function () {
