@@ -54,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <h2><a href="producto/{{$juguete['producto']->id}}">{{$juguete['producto']->name}}
+                            <h2><a href="producto/detalle/{{$juguete['producto']->id}}">{{$juguete['producto']->name}}
 
                                 </a></h2>
                         </div>
