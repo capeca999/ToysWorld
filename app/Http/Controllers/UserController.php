@@ -90,7 +90,9 @@ class UserController extends Controller
     {
         //
     }
-
+public static function perfilUsuario(){
+return view("usuarios.perfil");
+}
     /**
      * Saca todos los Usuarios tipo Usuario
      *
