@@ -154,7 +154,13 @@ label{
 }
 
 .product-item {
-    padding: 10px
+    padding: 10px;
+}
+
+.linksProductos{
+    display: contents;
+    height: 380px;
+    width: 400px;
 }
 
 .product-item .product-container {
@@ -164,7 +170,8 @@ label{
     border: 1px solid #dbe3e7;
     border-radius: 3px;
     box-shadow: 1px 3px 1px rgba(0, 0, 0, .08);
-    padding: 25px
+    padding: 25px;
+    cursor: pointer;
 }
 
 .product-item a.product-image {

@@ -111,7 +111,7 @@ Route::group(['prefix' => 'producto'], function(){
         return view('productos.detalle')->with('id',$id);
     });*/
 
-        Route::get('detalle/{id}', 'ProductController@mostrarProducto');
+    Route::get('detalle/{id}', 'ProductController@mostrarProducto');
 
     //LISTAR PRODUCTOS
     Route::get('listar/', function () {

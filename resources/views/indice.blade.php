@@ -1,9 +1,6 @@
 @extends('layouts.master')
+
 @section('contenido')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
     <section id="carousel">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">
@@ -32,8 +29,7 @@
                             class="fa fa-chevron-left"></i><span class="sr-only">Previous</span></a><a
                         class="carousel-control-next" href="#carousel-1" role="button" data-slide="next"><i
                             class="fa fa-chevron-right"></i><span class="sr-only">Next</span></a></div>
-            <ol
-                    class="carousel-indicators">
+            <ol class="carousel-indicators">
                 <li data-target="#carousel-1" data-slide-to="0"></li>
                 <li data-target="#carousel-1" data-slide-to="1"></li>
                 <li data-target="#carousel-1" data-slide-to="2" class="active"></li>
@@ -41,22 +37,18 @@
         </div>
     </section>
 
-
-
     <div class="container">
         <div class="row product-list dev">
 
             @foreach($juguetes as $juguete)
-            <div class="col-sm-6 col-md-4 product-item animation-element slide-top-left">
-                <div class="product-container">
+               <div class="col-sm-6 col-md-4 product-item animation-element slide-top-left">
+                <div class="product-container" onclick="clickProducto({{$juguete['producto']->id}})">
                     <div class="row">
-                        <div class="col-md-12"><a href="#" class="product-image"><img src="/img/{{$juguete['producto']->id}}.jpg"></a></div>
+                        <div class="col-md-12"><a class="product-image"><img src="/img/{{$juguete['producto']->id}}.jpg"></a></div>
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <h2><a href="producto/detalle/{{$juguete['producto']->id}}">{{$juguete['producto']->name}}
-
-                                </a></h2>
+                            <h2>{{$juguete['producto']->name}}</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -74,10 +66,6 @@
             </div>
             @endforeach
 
-
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
 @endsection

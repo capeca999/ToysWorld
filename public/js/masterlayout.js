@@ -17,11 +17,14 @@ $(function(){
        $(this).css('background-color','white'); 
     });
 
-$('#logout').click(function(event){
-    event.preventDefault();
-    $('#frm-logout').submit();
+    $('#logout').click(function(event){
+        event.preventDefault();
+        $('#frm-logout').submit();
+    });
+
 });
 
 
-    
-});
+    function clickProducto(id){
+        location.href='/detalle/'+id;
+    }
