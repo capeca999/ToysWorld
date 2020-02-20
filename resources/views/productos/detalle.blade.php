@@ -1,22 +1,22 @@
 @extends('layouts.master')
-@section('contenido')
 
 @section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="/js/detalle.js"></script>
 @endsection
 
 @section('titulo')
 - Detalle Producto
 @endsection
 
+@section('contenido')
 <div class="contenedor-producto">
     <div class="container">
         <div class="row">
             <div id="carousel-detalle" class="col-sm">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-
                         @for($i=0;$tamanyo>$i;$i++)
                         @if ($i == 0)
                         <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}" class="active"></li>
@@ -24,7 +24,6 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}"></li>
                         @endif
                         @endfor
-
                     </ol>
                     <div class="carousel-inner">
 
@@ -56,25 +55,25 @@
                 <div class="detalle-producto">
                     <div class="d-flex">
 
-                        <span class="mr-auto">{{$producto[0]->name}} </span> 
-                        <span>ID {{$id}}</span><br>   
+                        <span class="mr-auto" id="nombreProductoDetalle">{{$producto[0]->name}} </span> 
+                        <span id="idProductoDetalle">ID {{$id}}</span><br>   
                     </div>
 
                     <div class="d-flex">
-                        <span class="precio-producto  mr-auto">{{$producto[0]->price}}€</span><br><br>
+                        <span class="precio-producto mr-auto" id="precioProductoDetalle">{{$producto[0]->price}}€</span><br><br>
                         <span class="descuento-producto">Info de DESCUENTO {{$producto[0]->discount}}% &nbsp;&nbsp;</span>
                         <span class="descuento-producto"> Info de IVA  {{$producto[0]->taxes}}%</span>
                     </div>
 
                     <form id="cantidad-producto">                    
-                        <input type="number" name="cantidad" min="1" max="{{$producto[0]->stock}}" value="1">
+                        <input type="number" name="cantidad" min="1" max="{{$producto[0]->stock}}" value="1" id="cantidadProductoDetalle">
                     </form>
 
                     <br>
                     <button id="detalle-boton" type="button" class="btn btn-primary btn-sm detalle-boton">Añadir Carrito</button>
 
                 </div>
-                <div class="detalle-producto">
+                <div class="detalle-producto" id="descProductoDetalle">
                    {{$producto[0]->description}}
                 </div>
             </div>

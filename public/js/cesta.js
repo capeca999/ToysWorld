@@ -1,18 +1,11 @@
 //Cargamos la página completamente antes de empezar
 $(function(){
     
-    var el1 = ['mesa azul','asdasdad',1,4550,2];
-    var el2 = ['nenuco','muñeco',2,20,5];
-    var el3 = ['satisfyer','fuego',3,450,22];
-    var el4 = ['un gormiti bien sabroson','de agua y daire',4,150,1];
-    var arry = [el1,el2,el3,el4];
-    setCookie('carrito',JSON.stringify(arry),9999999999);
-    
     //Obtiene todo el contenido de la Cookie 'carrito' y va pasando todos los productos de la Cookie a líneas de pedido 
     var productos = JSON.parse(getCookie('carrito'));
     var precios;
     var cont=0;
-    if(productos!=null){
+    if(productos[0]!=null){
         for(var i=0;i<productos.length;i++){
             anyadirProducto(productos[i]);   
         }   
