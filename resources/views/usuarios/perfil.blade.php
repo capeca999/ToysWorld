@@ -15,12 +15,20 @@
 <div id="usuario-perfil">
     <div id="contenedor-perfil">
         <h1>Perfil</h1>
-        Nombre&nbsp;&nbsp;<span class="nombre" title="Doble click para cambiar">Pepa</span><br><br>
-        Apellidos&nbsp;&nbsp;<span id="apellido1" title="Doble click para cambiar">Rodrigo</span>&nbsp;<span id="apellido2" title="Doble click para cambiar">Morcillo</span> <br><br>
-        Fecha Nacimiento&nbsp;&nbsp; <span id="nacimiento" title="Doble click para cambiar">12-2-2018</span><br><br>
+        Nombre&nbsp;&nbsp;<span class="nombre" title="Doble click para cambiar">{{Auth::user()->name}}</span><br><br>
+        Apellidos&nbsp;&nbsp;<span id="apellido1" title="Doble click para cambiar">{{Auth::user()->surname1}}</span>&nbsp;<span id="apellido2" title="Doble click para cambiar">{{Auth::user()->surname2}}</span> <br><br>
+        Fecha Nacimiento&nbsp;&nbsp; <span id="nacimiento" title="Doble click para cambiar">{{Auth::user()->date_of_birth}}</span><br><br>
         <hr>
-        Email&nbsp;&nbsp;<span id="email" title="Doble click para cambiar">pepa@gmail.com</span><br><br>
-        <a href="#" id="recu-contras">Recuperar Contraseña</a>
+        Email&nbsp;&nbsp;<span id="email" title="Doble click para cambiar">{{Auth::user()->email}}</span><br><br>
+      
+
+
+        @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+
 
     </div>
     <div id="contenedor-historial">
