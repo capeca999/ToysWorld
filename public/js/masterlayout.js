@@ -23,8 +23,8 @@ $(function(){
     });
 
 });
-
-
+    
+    //Redirige el a la página de detalles del producto
     function clickProducto(id){
-        location.href='/detalle/'+id;
+        location.href='/producto/detalle/'+id;
     }
