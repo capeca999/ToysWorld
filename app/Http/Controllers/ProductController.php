@@ -248,9 +248,9 @@ class ProductController extends Controller
 
         $producto = Product::select('products.id','products.taxes','products.discount','products.name','products.description','products.brand','products.weight','products.price','products.stock','products.age','products.status')
             ->join('categories','categories.id','=','products.id_category')
-            ->join('line_product','line_product.id_product','=','products.id')
+            ->join('lines','lines.id_product','=','products.id')
             ->where('categories.name',$categoria)
-            ->where('line_product.quantity',$vendido,20)
+            ->where('lines.quantity',$vendido,20)
             ->get();
 
         return $producto;
