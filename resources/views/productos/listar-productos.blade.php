@@ -9,7 +9,7 @@
 @endsection
 
 @section('titulo')
-    - Listar Productos
+- Listar Productos
 @endsection
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -22,33 +22,36 @@
             <fieldset>
                 <legend for="nombre">Nombre</legend>
                 <input type="text" class="id-listar" id="nombre" aria-describedby="id" placeholder="Ejemplo: bicicleta">
-                <select id="vendidos" class="selectpicker">
-                    <option selected>Más Vendidos</option>
-                    <option>Menos Vendidos</option>
-                </select>
             </fieldset><br><br>
             <fieldset>
                 <legend for="categoria">Categoría/Provincia</legend>
                 Categoría
-                <select id="categoria" class="selectpicker" multiple data-live-search="true">
-                    <option>Seleccionar Todo</option>
-                    <option>Juguetes</option>
-                    <option>Juegos de mesa</option>
-                    <option>Relish</option>
+                <select name="categoria" id="select-categoria">
+                    <option value="all">Seleccionar Todo</option>
+                    @for($i=0;$num_categorias>$i;$i++)
+                    <option value="{{$categorias[$i]->name}}">{{$categorias[$i]->name}}</option>
+                    @endfor
                 </select>
                 Provincia de Usuarios
-                <select id="provincia" class="selectpicker" multiple data-live-search="true">
-                    <option>Seleccionar Todo</option>
-                    <option>Valencia</option>
-                    <option>Madrid</option>
-                    <option>Barcelona</option>
+                <select id="provincia" name="provincia">
+                    <option selected>Seleccionar Todo</option>
+                    @for($i=0;$num_provincias>$i;$i++)
+                    <option>{{$provincias[$i]->province}}</option>
+                    @endfor
                 </select>
+                
+                Productos Vendidos
+                <select id="vendidos" name="vendidos">
+                    <option value="mas" selected>Más Vendidos</option>
+                    <option value="menos">Menos Vendidos</option>
+                </select>
+
+
             </fieldset><br><br>
             <fieldset>
                 <legend for="stock">Stock</legend>
-                <input type="checkbox" value="">Productos con poco o ningún Stock
+                <input type="checkbox" name="poco-stock" id="poco-stock">Productos con poco (menos de 5) o ningún Stock
             </fieldset>
-
         </div>
     </form>
     <div class="container-fluid">
@@ -72,51 +75,7 @@
                     </tr>
                 </thead>
                 <tbody id="tbody-productos" class="fila-alta">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td><img src="/img/icons/papelera.svg" id="baja" alt="papelera" title="Dar de baja"></td>
-                    </tr>
-                    <tr> 
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td><img src="/img/icons/papelera.svg" id="baja" alt="papelera" title="Dar de baja"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td><img src="/img/icons/papelera.svg" id="baja" alt="papelera" title="Dar de baja"></td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
