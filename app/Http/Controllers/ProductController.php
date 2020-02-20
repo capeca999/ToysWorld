@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\Product;
-use App\User;
 use App\Line;
 class ProductController extends Controller
 {
@@ -136,7 +135,7 @@ class ProductController extends Controller
     public static function listarProductos(){
         $productos = Product::all();
 
-        return $productos;
+        return json_encode($productos);
     }
 
     /**
@@ -145,40 +144,8 @@ class ProductController extends Controller
      * @param  string $categoria
      * @return array productos
      */
-    public static function inicioFiltrarProductos(){
-
-
-        $categorias= Product::select('categories.name')
-            ->join('categories','categories.id','=','products.id_category')
-            ->distinct()
-            ->get();
-
-        $provincias= User::select('addresses.province')
-            ->join('addresses','addresses.nif','=','users.nif')
-            ->distinct()
-            ->get();
-
-
-        $num_categorias= Product::select('categories.name')
-            ->join('categories','categories.id','=','products.id_category')
-            ->distinct()
-            ->get()
-            ->count();
-
-        $num_provincias= User::select('addresses.province')
-            ->join('addresses','addresses.nif','=','users.nif')
-            ->distinct()
-            ->get()
-            ->count();
-
-
-        /*return $categorias." ".$provincias." ".$num_provincias." ".$num_categorias;*/
-
-        return view('productos.listar-productos')
-            ->with('categorias',$categorias)
-            ->with('provincias',$provincias)
-            ->with('num_provincias',$num_provincias)
-            ->with('num_categorias',$num_categorias);
+    public static function listarProductosCategoria($categoria){
+        return $productos = Product::all()->where('id_category', $categoria);
     }
 
     /**
@@ -206,7 +173,7 @@ class ProductController extends Controller
 
     public static function mostrarProducto($id){
 
-        $producto = Product::select('images.type','images.id','products.taxes','products.discount','products.name','products.description','products.brand','products.stock','products.weight','products.price','products.age')
+        $producto = Product::select('images.type','images.id','products.taxes','products.discount','products.name','products.description','products.brand','products.stock','products.weight','products.price','products.age','products.age')
             ->join('images','images.id_product','=','products.id')
             ->where('products.id',$id)
             ->get();
@@ -221,41 +188,7 @@ class ProductController extends Controller
             ->with('producto',$producto)
             ->with('tamanyo',$tamanyo)
             ->with('id',$id);
-        //return producto;
-    }
-
-    public static function pocoStockProducto(){
-        $productos= Product::select('*')
-            ->where('stock','<=',5)
-            ->get();
-        return $productos;
-    }
-
-    public static function nombreProducto($nombre){
-        $productos= Product::select('*')
-            ->where('name','like','%'.$nombre.'%')
-            ->get();
-        return $productos;
-    }
-
-    public static function categoriaProducto($categoria,$vendido){
-
-        if($vendido == 'mas'){
-            $vendido =">";   
-        }else{
-            $vendido ="<";   
-        }
-
-        $producto = Product::select('products.id','products.taxes','products.discount','products.name','products.description','products.brand','products.weight','products.price','products.stock','products.age','products.status')
-            ->join('categories','categories.id','=','products.id_category')
-            ->join('lines','lines.id_product','=','products.id')
-            ->where('categories.name',$categoria)
-            ->where('lines.quantity',$vendido,20)
-            ->get();
-
-        return $producto;
-
-
+        return producto;
     }
 
 }

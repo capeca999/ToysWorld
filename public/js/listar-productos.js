@@ -1,60 +1,66 @@
 $(function(){
+            console.log('holaddd');
+
     //TABLA crear las filas de la tabla con sus productos
     $.ajax({
         url: "/producto/listar/mostrar/",
         method: "GET",
         success: function(productos){
             anyadirTabla(productos);
-        }
+        },
+        dataType: "json"
     });
 
+    function anyadirTabla(productos){
+        $('#tbody-productos').empty();
 
-    //FILTAR POR CATEGORIA
-    $('#select-categoria').blur(function(){
-        $.ajax({
-            url: "/producto/listar/categoria/"+$(this).val()+"/"+$('#vendidos').val(),
-            method: "GET",
-            success: function(productos){
-                anyadirTabla(productos);
+        for(var i = 0 ; i<productos.length ; i++){
+            var tr = $('<tr>');
+            $('#tbody-productos').append(tr);
+
+            var cont=0;
+            for(var clave in productos[i]){
+                if(cont != 13){
+                    var producto = productos[i][clave];
+                    columna = $('<td>');
+                    if(cont==0){
+                        columna=$('<th>');
+                        tr.attr('id','id'+producto);
+                        columna.attr('scope','col');
+                    }else{
+                        if(clave == "status"){
+                            if(productos[i][clave] == "No_Disponible"){
+                                tr.addClass('eliminado');
+                            }
+                        }
+                        columna.addClass(clave);
+                    }  
+                    if(cont==12){
+                        var img=$('<img>');
+                        if(tr.attr('class') == 'eliminado'){
+                            img.attr('src','/img/icons/alta.svg');
+                            img.attr('id','alta');
+
+                        }else{
+                            img.attr('src','/img/icons/papelera.svg');
+                            img.attr('id','baja');
+                        }
+                        img.attr('alt','papelera');
+                        img.attr('title','Dar de baja');
+                        columna.append(img);
+                    }else{
+                        columna.text(producto);
+                    }
+                    tr.append(columna);
+
+                }
+                cont++;
             }
-        });
-    });
-
-
-    //FILTRAR STOCK
-    $('#poco-stock').blur(function(){
-        if($(this).prop('checked')){
-            $.ajax({
-                url: "/producto/listar/stock/",
-                method: "GET",
-                success: function(productos){
-                    anyadirTabla(productos);
-                }
-            });
-        }else{
-            location.reload();
         }
-    });
-
-    //FILTRAR POR NOMBRE
-    $('.listar-productos #nombre').blur(function(){
-        if($(this).val() != ''){
-            var nombre =$(this).val();
-            console.log('filtrar');
-            $.ajax({
-                url: "/producto/listar/nombre/"+nombre,
-                method: "GET",
-                success: function(productos){
-                    anyadirTabla(productos);
-                }
-            });
-
-        }else{
-            location.reload();
-        }
-    });
+    }
 
 
+    $('fieldset #categoria').selectpicker();
 
     /*MODIFICAR PRODUCTO (Añadir input)- Al hacer doble click creara un input en el td cliqueado*/
     $( "#tbody-productos" ).on( "dblclick", "td", function() {
@@ -96,6 +102,16 @@ $(function(){
 
     });
 
+    /*******************    QUEDAN LAS COMPROBACIONES    ********************/
+    function comprobacionModificacion(atributo,valor){
+        var error=false;
+        /*  if(atributo == 'taxes' || atributo == 'discount'){
+            if(isNaN(valor)){
+               error=true; 
+            }
+        }*/
+        return error;
+    }
 
 
     /*AÑADIR PRODUCTO - Al hacer click en el icono de + se añadira una nueva fila con sus columnas para insertar los datos*/
@@ -194,80 +210,22 @@ $(function(){
     });
 
 
+    function modificarEstado(id,estado){
+        var ruta= "/producto/listar/modificar/"+id+"/status/Disponible";
+        if(estado != "Disponible"){
+            ruta= "listar/modificar/"+id+"/status/No_Disponible";
+        }
+        $.ajax({
+            url: ruta,
+            method: "GET",
+        });
+
+
+    }
+
+
+
+
+
 
 });
-
-
-
-function anyadirTabla(productos){
-    $('#tbody-productos').empty();
-
-    for(var i = 0 ; i<productos.length ; i++){
-        var tr = $('<tr>');
-        $('#tbody-productos').append(tr);
-
-        var cont=0;
-        for(var clave in productos[i]){
-            if(cont != 13){
-                var producto = productos[i][clave];
-                columna = $('<td>');
-                if(cont==0){
-                    columna=$('<th>');
-                    tr.attr('id','id'+producto);
-                    columna.attr('scope','col');
-                }else{
-                    if(clave == "status"){
-                        if(productos[i][clave] == "No_Disponible"){
-                            tr.addClass('eliminado');
-                        }
-                    }
-                    columna.addClass(clave);
-                }  
-                if(cont==12){
-                    var img=$('<img>');
-                    if(tr.attr('class') == 'eliminado'){
-                        img.attr('src','/img/icons/alta.svg');
-                        img.attr('id','alta');
-
-                    }else{
-                        img.attr('src','/img/icons/papelera.svg');
-                        img.attr('id','baja');
-                    }
-                    img.attr('alt','papelera');
-                    img.attr('title','Dar de baja');
-                    columna.append(img);
-                }else{
-                    columna.text(producto);
-                }
-                tr.append(columna);
-
-            }
-            cont++;
-        }
-    }
-}
-
-
-
-/*******************    QUEDAN LAS COMPROBACIONES    ********************/
-function comprobacionModificacion(atributo,valor){
-    var error=false;
-    /*  if(atributo == 'taxes' || atributo == 'discount'){
-            if(isNaN(valor)){
-               error=true; 
-            }
-        }*/
-    return error;
-}
-function modificarEstado(id,estado){
-    var ruta= "/producto/listar/modificar/"+id+"/status/Disponible";
-    if(estado != "Disponible"){
-        ruta= "listar/modificar/"+id+"/status/No_Disponible";
-    }
-    $.ajax({
-        url: ruta,
-        method: "GET",
-    });
-
-
-}

@@ -55,9 +55,9 @@ $(function(){
     
     //Controla el click sobre el boton de "pagar", te redirige a la página de pago si estas logueado y en caso contrario a la página de registro
     $('#botonPago').click(function(){
-//        if(Auth::user()!=null){
-            setCookie('preciosDeCesta',precios,45);
-            location.href="/pagar";
+//        if(Auth::user()!=null&&precios!=undefined){
+//            setCookie('preciosDeCesta',precios,45);
+//            location.href="/cesta/pagar";
 //        }else{
 //            location.href="/register";
 //        }

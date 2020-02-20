@@ -17,6 +17,7 @@ $(function(){
             cestaActual.push(nuevoProducto);
             setCookie('carrito',JSON.stringify(cestaActual),9999999999)
         }
+        alert("Producto añadido al carrito correctamente");
     });  
     
     //Crea una cookie pasando el nombre, el valor y la fecha de caducidad    
