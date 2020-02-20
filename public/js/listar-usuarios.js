@@ -5,8 +5,7 @@ $(function(){
         method: "GET",
         success: function(usuarios){
             crearTabla(usuarios);
-        },
-        dataType: "json",
+        }
     });
 
     //SELECCIÓN USUARIO 
@@ -27,10 +26,6 @@ $(function(){
                 }
             }
         });
-
-
-
-
     });
 
     //FILTRADO DE IMPORTE
