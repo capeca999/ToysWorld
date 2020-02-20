@@ -1,5 +1,5 @@
 $(function(){
-    console.log('holaddd');
+            console.log('holaddd');
 
     //TABLA crear las filas de la tabla con sus productos
     $.ajax({
@@ -7,66 +7,10 @@ $(function(){
         method: "GET",
         success: function(productos){
             anyadirTabla(productos);
-        }
-    });
-    //TABLA crear las filas de la tabla con sus productos
-    $.ajax({
-        url: "/producto/listar/mostrar/",
-        method: "GET",
-        success: function(productos){
-            anyadirTabla(productos);
-        }
+        },
+        dataType: "json"
     });
 
-
-    //FILTRAR STOCK
-    $('#poco-stock').blur(function(){
-        if($(this).prop('checked')){
-            $.ajax({
-                url: "/producto/listar/stock/",
-                method: "GET",
-                success: function(productos){
-                    anyadirTabla(productos);
-                }
-            });
-        }else{
-            location.reload();
-        }
-    });
-
-    //FILTRAR POR NOMBRE
-    $('.listar-productos #nombre').blur(function(){
-        if($(this).val() != ''){
-            var nombre =$(this).val();
-            console.log('filtrar');
-            $.ajax({
-                url: "/producto/listar/nombre/"+nombre,
-                method: "GET",
-                success: function(productos){
-                    anyadirTabla(productos);
-                }
-            });
-
-        }else{
-            location.reload();
-            cont++;
-        }
-    });
-
-
-
-
-
-    //FILTAR POR CATEGORIA
-    $('#select-categoria').blur(function(){
-        $.ajax({
-            url: "/producto/listar/categoria/"+$(this).val()+"/"+$('#vendidos').val(),
-            method: "GET",
-            success: function(productos){
-                anyadirTabla(productos);
-            }
-        });
-    });
     function anyadirTabla(productos){
         $('#tbody-productos').empty();
 
