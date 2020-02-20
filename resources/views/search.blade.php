@@ -18,7 +18,7 @@
 
 <body>
 
-<input type="hidden" id="pagina" value="1">
+
 
 
 <form class="form-inline">

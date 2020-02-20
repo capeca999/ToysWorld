@@ -80,9 +80,12 @@ Route::group(['prefix' => 'usuario'], function(){
 */
 Route::group(['prefix' => 'producto'], function(){
 
-    Route::get('detalle/{id}', function ($id) {
+/*    Route::get('detalle/{id}', function ($id) {
         return view('productos.detalle')->with('id',$id);
-    });
+    });*/
+    
+        Route::get('detalle/{id}', 'ProductController@mostrarProducto');
+
 
     //LISTAR PRODUCTOS
     Route::get('listar/', function () {

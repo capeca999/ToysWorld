@@ -7,29 +7,39 @@
 @endsection
 
 @section('titulo')
-    - Detalle Producto
+- Detalle Producto
 @endsection
 
 <div class="contenedor-producto">
     <div class="container">
         <div class="row">
-            <div class="col-sm">
+            <div id="carousel-detalle" class="col-sm">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+                        @for($i=0;$tamanyo>$i;$i++)
+                        @if ($i == 0)
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}" class="active"></li>
+                        @else
+                        <li data-target="#carouselExampleIndicators" data-slide-to="{{$i}}"></li>
+                        @endif
+                        @endfor
+
                     </ol>
                     <div class="carousel-inner">
+
+                        @for($i=0;$tamanyo>$i;$i++)
+                        @if ($i == 0)
                         <div class="carousel-item active">
-                            <img src="/img/img.jpg" class="d-block w-100" alt="...">
+                            <img src="/img/{{$producto[$i]->id}}.{{$producto[$i]->type}}" class="d-block w-100" alt="...">
                         </div>
+                        @else
                         <div class="carousel-item">
-                            <img src="/img/img2.jpg" class="d-block w-100" alt="...">
+                            <img src="/img/{{$producto[$i]->id}}.{{$producto[$i]->type}}" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item">
-                            <img src="/img/img3.jpg" class="d-block w-100" alt="...">
-                        </div>
+                        @endif
+
+                        @endfor
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -42,50 +52,50 @@
                 </div>
 
             </div>
-            <div class="col-sm">
+            <div id="descripcion-detalle" class="col-sm">
                 <div class="detalle-producto">
                     <div class="d-flex">
 
-                        <span class="mr-auto">Producto </span> 
-                        <span>ID{{$id}}</span><br>   
+                        <span class="mr-auto">{{$producto[0]->name}} </span> 
+                        <span>ID {{$id}}</span><br>   
                     </div>
 
                     <div class="d-flex">
-                        <span class="precio-producto  mr-auto">35,50€</span><br><br>
-                        <span class="descuento-producto">Info de DESCUENTO</span>
+                        <span class="precio-producto  mr-auto">{{$producto[0]->price}}€</span><br><br>
+                        <span class="descuento-producto">Info de DESCUENTO {{$producto[0]->discount}}% &nbsp;&nbsp;</span>
+                        <span class="descuento-producto"> Info de IVA  {{$producto[0]->taxes}}%</span>
                     </div>
-                    
+
                     <form id="cantidad-producto">                    
-                        <input type="number" name="cantidad" min="1" max="10" value="1">
+                        <input type="number" name="cantidad" min="1" max="{{$producto[0]->stock}}" value="1">
                     </form>
-                    
+
                     <br>
                     <button id="detalle-boton" type="button" class="btn btn-primary btn-sm detalle-boton">Añadir Carrito</button>
 
                 </div>
                 <div class="detalle-producto">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-
+                   {{$producto[0]->description}}
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="detalle-atributo">
+    <div id="otros-detalle" class="detalle-atributo">
 
         <div class="d-flex">
             <span class="mr-auto">Marca </span> 
-            <span>Una marca</span>   
+            <span>{{$producto[0]->brand}}</span>   
         </div>
         <hr>
         <div class="d-flex">
             <span class="mr-auto">Edad Recomendad </span> 
-            <span>7 - 100</span>   
+            <span>{{$producto[0]->age}} - 100</span>   
         </div>
         <hr>
         <div class="d-flex">
-            <span class="mr-auto">Otro</span> 
-            <span>Cosas</span>   
+            <span class="mr-auto">Peso</span> 
+            <span>{{$producto[0]->weight}}g</span>   
         </div>
     </div>
 

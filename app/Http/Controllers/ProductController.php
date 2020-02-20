@@ -119,23 +119,53 @@ class ProductController extends Controller
      * Saca todos los productos, que tiene relacion con la categoria
      *
      * @param  string $categoria
-     * @return json productos
+     * @return array productos
      */
     public static function listarProductosCategoria($categoria){
         return $productos = Product::all()->where('id_category', $categoria);
     }
 
+    /**
+     * Modifica el valor con el $valor pasado del atributo pasado con el valor $atributo del producto con ese id 
+     *
+     * @param  int $id
+     * @param  string $atributo
+     * @param  string $valor
+     *
+     * @return array productos
+     */
     public static function modificarProducto($id,$atributo,$valor){
         $producto = Product::find($id);
         $producto->$atributo = $valor;
         $producto->save(); 
     }
-    
+
     public static function modificarEstado($id,$estado){
         $producto = Product::find($id);
         $producto->status = $estado;
         $producto->save();
     }
 
+
+
+    public static function mostrarProducto($id){
+
+        $producto = Product::select('images.type','images.id','products.taxes','products.discount','products.name','products.description','products.brand','products.stock','products.weight','products.price','products.age','products.age')
+            ->join('images','images.id_product','=','products.id')
+            ->where('products.id',$id)
+            ->get();
+
+        $tamanyo= Product::select('*')
+            ->join('images','images.id_product','=','products.id')
+            ->where('products.id',$id)
+            ->get()->count();
+
+        //view('productos.detalle')->with('producto',
+        return view('productos.detalle')
+            ->with('producto',$producto)
+            ->with('tamanyo',$tamanyo)
+            ->with('id',$id);
+        return producto;
+    }
 
 }
