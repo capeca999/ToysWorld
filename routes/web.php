@@ -74,6 +74,28 @@ Route::group(['prefix' => 'usuario'], function(){
 
 });
 
+Route::get('/terminosYCondiciones/',function(){
+    return view('terminosYCondiciones');
+});	
+
+Route::get('/nuestroCompromiso/',function(){
+    return view('nuestroCompromiso');
+});
+
+Route::get('/sobreNosotros/',function(){
+    return view('sobreNosotros');
+});
+
+Route::get('/politicaDePrivacidad/',function(){
+    return view('politicaDePrivacidad');
+});
+    
+Route::get('cesta/',function(){	
+    return view('cesta');	   
+}); 	
+                              
+                              
+                    
 
 /*
 |--------------------------------------------------------------------------
@@ -88,9 +110,8 @@ Route::group(['prefix' => 'producto'], function(){
 /*    Route::get('detalle/{id}', function ($id) {
         return view('productos.detalle')->with('id',$id);
     });*/
-    
-        Route::get('detalle/{id}', 'ProductController@mostrarProducto');
 
+        Route::get('detalle/{id}', 'ProductController@mostrarProducto');
 
     //LISTAR PRODUCTOS
     Route::get('listar/', function () {
@@ -102,11 +123,7 @@ Route::group(['prefix' => 'producto'], function(){
 
     Route::get('listar/{categoria}', 'ProductController@listarProductosCategoria');
 
-
-
 });
-
-
 
 Route::get('cesta/',function(){
     return view('cesta');

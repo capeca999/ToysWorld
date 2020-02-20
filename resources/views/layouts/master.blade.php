@@ -62,7 +62,7 @@
        <div class="row">
             <div class="col-sm-6 col-md-4 footer-navigation">
         
-                <p class="links"><a href="#">Terminos Y condiciones</a><strong> · </strong><a href="#">Nuestro Compromiso</a><strong> ·<br><br> </strong><a href="#">Sobre Nosotros</a><strong> · </strong><a href="#">Politica De Privacidad</a></p>
+                <p class="links"><a href="/terminosYCondiciones/">Terminos Y condiciones</a><strong> · </strong><a href="/nuestroCompromiso/">Nuestro Compromiso</a><strong> ·<br><br> </strong><a href="/sobreNosotros/">Sobre Nosotros</a><strong> · </strong><a href="/politicaDePrivacidad/">Politica De Privacidad</a></p>
                 <img class="logo " src="/img/icons/logo.svg">
                 <p class="company-name">Tummys © 2019</p>
             </div>
