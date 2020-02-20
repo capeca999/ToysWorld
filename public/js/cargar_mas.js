@@ -1,13 +1,10 @@
 $(function () {
-    pagina=1;
-cargarMas();
-
+    pagina=2;
 $("#cargarMas").click(function (){
 cargarMas();
 });
 
-
-    $.ajax('http://localhost:8000/api/category',
+    $.ajax('/api/category/',
         {
             dataType: "json",
             success: function (data) {
@@ -92,10 +89,10 @@ $("#categoriasDesplegable").on('change', function(){
         }
 
         if($("#categoriasDesplegable option:selected").val()!=0){
-          sentencia='http://localhost:8000/api/category/' + pagina + '/' + $("#categoriasDesplegable option:selected").val();
+          sentencia='/api/category/' + $("#categoriasDesplegable option:selected").val() + '/' +  pagina ;
         }
         else {
-            sentencia='http://localhost:8000/api/toys/' + pagina + '/'+ searchBar;
+            sentencia='/api/toys/' + pagina + '/'+ searchBar;
         }
 alert(sentencia);
 
@@ -105,6 +102,7 @@ alert(sentencia);
                 dataType: "json",
 
                 success: function (data) {
+                    console.log('hola');
                     console.log(data);
                     alert(data.length);
                     for (var cont = 0; cont < data.length; cont++) {

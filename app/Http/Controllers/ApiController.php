@@ -10,48 +10,78 @@ use App\Product;
 class ApiController extends Controller
 {
 
+/*
+
+        $productosPorPagina = 20;
+        return Product::all()->where('state','=','alta')->skip(($numPag-1)*$productosPorPagina)->take($productosPorPagina);
+
+*/
 
 
 
-    public  function  getToys($pagina, $cantidad=21, $nombreToy=""){
+public function indexToysGenerico(){
+$productos = $this::getToys(1,21);
+
+return view('search')->with('productos', json_decode($productos));
+
+
+//return view('search')->with('productos', $this::json_decode(getToys(1, 21)));
+}
+
+public function indexToysName($nombre){
+    $productos = $this::getToysByName(1,21, $nombre);
+    return view('search')->with('productos', json_decode($productos));
+    //return view('search')->with('productos', $this::json_decode(getToys(1, 21)));
+    }
+    
+
+
+public static function getToysByName($pagina=1, $cantidad=21, $nombreToy=""){
+
+    if($cantidad<=0){
+$cantidad=21;
+    }
+
+    if($pagina<1){
+        $pagina=1;
+    }
+//select * from products where name like '%H%'
+$pagina--;
+return Product::all()->where('name', 'like', '%'.$nombreToy.'%')->splice(($cantidad*$pagina), $cantidad)->toJson();
+}
+
+
+public static function  getToys($pagina, $cantidad=21 ){
+    if($cantidad<=0){
+        $cantidad=21;
+    }
+    if ($pagina < 1){
+        $pagina=1;
+    }
+    $pagina--;
+
+
+
+        return Product::all()->splice(($cantidad*$pagina), $cantidad)->toJson();
+ 
+    //      return json_encode(Product::all()->take(($pagina*21)));
+}
+
+
+
+    public static function  getCategory($categoria=0, $pagina=1, $cantidad=21){
         if($cantidad<=0){
             $cantidad=21;
         }
         if ($pagina < 1){
             $pagina=1;
-
-        }
-
-        if(strlen($nombreToy)>0){
-            return Product::all()->where('name','like', $nombreToy)->skip(($pagina-1)*$cantidad)->take($cantidad)->toJson();
-        }
-        else{
-            return Product::all()->skip(($pagina-1)*$cantidad)->take($cantidad)->toJson();
-        }
-
-        //      return json_encode(Product::all()->take(($pagina*21)));
-
-
-    }
-
-
-
-
-    public  function  getCategory($pagina, $cantidad=21, $categoria){
-        if($cantidad<=0){
-            $cantidad=21;
-        }
-        if ($pagina < 1){
-            $pagina=1;
-
         }
         //      return json_encode(Product::all()->take(($pagina*21)));
-        return Product::all()->where('id_category', '=',  $categoria)->skip(($pagina-1)*$cantidad)->take($cantidad)->toJson();
-
-
+        return Product::all()->where('id_category', '=', $categoria)->splice(($cantidad*$pagina), $cantidad)->toJson();
+        
     }
 
-    public function  getAllCategory(){
+    public static function  getAllCategory(){
         return Category::all();
     }
 

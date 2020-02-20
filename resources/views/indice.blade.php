@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('contenido')
     <section id="carousel">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">

@@ -86,8 +86,14 @@ class ProductController extends Controller
     }
 
 
-
-
+   /**
+     * Saca una cantidad determinada de productos de la página por determinar 
+     *
+     * @param  int $pagina
+     * @param  int $cantidad
+     * @param  string $nombreToy
+     * @return json productos
+     */
     public  function  getToys($pagina, $cantidad=21, $nombreToy=""){
         if($cantidad<=0){
             $cantidad=21;
@@ -104,18 +110,23 @@ class ProductController extends Controller
             return Product::all()->skip(($pagina-1)*$cantidad)->take($cantidad)->toJson();
         }
 
-        //      return json_encode(Product::all()->take(($pagina*21)));
+
     }
 
 
 
-
+   /**
+     * Saca los 6 productos mas vendidos
+     *
+     * @param  void
+     * @return json productos
+     */
     public static function getMostSelled()
     {
         $lineas = Line::all(['id_product', 'quantity'])->groupBy('id_product')->map(function ($item) {return $item->sum('quantity');})->toArray();
         asort($lineas);
         $lineas =  array_reverse($lineas, true);
-        $lineas = array_slice($lineas, 0,3, true);
+        $lineas = array_slice($lineas, 0,6, true);
 
 
         foreach($lineas as $key=>$valor) {
@@ -124,6 +135,8 @@ class ProductController extends Controller
         return $products;
 
     }
+
+
 
 
     /**
