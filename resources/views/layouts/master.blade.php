@@ -23,8 +23,8 @@
             <div class="col-md-9 col-12 mt-md-2 mt-5 mb-0 pb-0">
                 <a href="{{url('/')}}"><img id="logoHeader" class="cursorHand" src="/img/caballo.png"></a>
                 <img id="tituloHeader" src="/img/titulo.png">
-                <a class="d-none d-md-inline-flex " href="{{url('/productos/busqueda/')}}"><img class="cursorHand iconos ml-5" src="/img/lupa.png" alt="Busqueda"></a>
-                <input id="inputHeader" class="ml-5" type="text"  placeholder="Buscar juguetes"><img id="flechaHeader" class="cursorHand" src="/img/flechaderecha.png" alt="flecha">
+                <a class="d-none d-md-inline-flex " href="{{url('/productos/busqueda/')}}"><img class="cursorHand iconos ml-5" src="/img/logomenuBusqueda.png" alt="Busqueda"></a>
+                <input id="inputHeader" class="ml-5" type="text"  placeholder="Buscar juguetes"><img id="lupaHeader" class="cursorHand" src="/img/lupa.png" alt="lupa">
             </div>
 
             <div class="col-md-3 col-12 ml-4 ml-sm-5 ml-md-0 mt-4">
