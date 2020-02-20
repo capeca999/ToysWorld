@@ -730,7 +730,7 @@ div.social-links {
 
 /* CSS Página de pago */
 
-#tablasDePago{
+.tablasDePago{
     background-color:#ffb677;
     border: 3px solid black;
     border-collapse: collapse;

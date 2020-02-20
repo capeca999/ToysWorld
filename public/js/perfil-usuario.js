@@ -10,17 +10,6 @@ $(function(){
         }
     });
 
-
-    //HISTORIAL crear el a apartado de historiales
-    $.ajax({
-        url: "/usuario/perfil/historial/",
-        method: "GET",
-        success: function(historiales){
-            console.log(historiales);
-            crearHistorial(historiales);
-        }
-    });
-
     //GENERA HISOTIRIALES a partir de lo que traer la consulta ajax
     function crearHistorial(historiales){
 
@@ -47,9 +36,7 @@ $(function(){
                 var div3=$('<div>');
                 div3.addClass('d-flex');
                 div3.html('  Precio Final&nbsp;&nbsp;<span id="precio" class="precio mr-auto">'+historiales[i]['total_price']+'€</span>Fecha de Compra&nbsp;&nbsp;<span id="fecha" class="compra">'+historiales[i]['date']+'</span><br>');
-
-
-
+                
                 cont++;
             }
 
@@ -60,6 +47,7 @@ $(function(){
         }
 
     }
+
 
 
     //DOBLE CLICK en los SPAN PERFIL: Al hacer doble click sobre un span, vaciaremos el 'span' y crearemos un input

@@ -15,7 +15,7 @@
 <div id="usuario-perfil">
     <div id="contenedor-perfil">
         <h1>Perfil</h1>
-        Nombre&nbsp;&nbsp;<span class="nombre" title="Doble click para cambiar">{{Auth::user()->name}}</span><br><br>
+        Nombre&nbsp;&nbsp;<span class="nombre" title="Doble click para cambiar">Pepa</span><br><br>
         Apellidos&nbsp;&nbsp;<span id="apellido1" title="Doble click para cambiar">Rodrigo</span>&nbsp;<span id="apellido2" title="Doble click para cambiar">Morcillo</span> <br><br>
         Fecha Nacimiento&nbsp;&nbsp; <span id="nacimiento" title="Doble click para cambiar">12-2-2018</span><br><br>
         <hr>
@@ -31,8 +31,5 @@
         </div>
     </div>
 </div>
-
-
-
 
 @endsection

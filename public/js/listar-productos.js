@@ -1,5 +1,4 @@
 $(function(){
-            console.log('holaddd');
 
     //TABLA crear las filas de la tabla con sus productos
     $.ajax({
