@@ -116,7 +116,7 @@ class ProductController extends Controller
         $lineas = Line::all(['id_product', 'quantity'])->groupBy('id_product')->map(function ($item) {return $item->sum('quantity');})->toArray();
         asort($lineas);
         $lineas =  array_reverse($lineas, true);
-        $lineas = array_slice($lineas, 0,3, true);
+        $lineas = array_slice($lineas, 0,6, true);
 
 
         foreach($lineas as $key=>$valor) {

@@ -42,7 +42,7 @@ Route::group(['prefix' => 'usuario'], function(){
 */
   
 
-    Route::middleware('auth:api')->get('perfil/historial/', 'UserController@historialUsuario');
+    Route::middleware('auth')->get('perfil/historial/', 'UserController@historialUsuario');
 
     
     //GESTIÓN LISTAR USUARIOS
