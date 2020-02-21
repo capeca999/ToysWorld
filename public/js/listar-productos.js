@@ -1,4 +1,4 @@
-$(function(){
+﻿$(function(){
     //TABLA crear las filas de la tabla con sus productos
     $.ajax({
         url: "/producto/listar/mostrar/",
@@ -19,6 +19,21 @@ $(function(){
             }
         });
     });
+
+
+  $.ajax('/api/category/',
+    {
+        dataType: "json",
+        success: function (data) {
+            for (var cont = 0; cont < data.length; cont++) {
+$("<option>  </option>").text(data[cont].name).attr("value", data[cont].id).appendTo($("#select-categoria"));
+            }
+        }
+    });
+
+
+
+
 
 
     //FILTRAR STOCK
