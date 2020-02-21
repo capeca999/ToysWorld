@@ -40,9 +40,7 @@ Route::group(['prefix' => 'usuario'], function(){
     });
     Route::get('perfil/{nif}/historial/', 'UserController@historialUsuario');
 */
-    Route::middleware('auth:api')->get('perfil/', function () {
-        return view('usuarios.perfil');
-    });
+  
 
     Route::middleware('auth:api')->get('perfil/historial/', 'UserController@historialUsuario');
 
