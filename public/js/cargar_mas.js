@@ -9,7 +9,6 @@ cargarMas();
             dataType: "json",
             success: function (data) {
                 console.log(data);
-                alert(data.length);
                 for (var cont = 0; cont < data.length; cont++) {
 //  let divPrincipal = $("<div></div>").attr("class", "col-sm-6 col-md-4 product-item animation-element slide-top-left");
 $("<option>  </option>").text(data[cont].name).attr("value", data[cont].id).appendTo($("#categoriasDesplegable"));
@@ -94,7 +93,7 @@ $("#categoriasDesplegable").on('change', function(){
         else {
             sentencia='/api/toys/' + pagina + '/'+ searchBar;
         }
-alert(sentencia);
+
 
 
         $.ajax(sentencia,
@@ -104,7 +103,7 @@ alert(sentencia);
                 success: function (data) {
                     console.log('hola');
                     console.log(data);
-                    alert(data.length);
+                  
                     for (var cont = 0; cont < data.length; cont++) {
                         let divPrincipal = $("<div></div>").attr("class", "col-sm-6 col-md-4 product-item animation-element slide-top-left");
                         let divContainer = $("<div></div>").attr("class", "product-container");
