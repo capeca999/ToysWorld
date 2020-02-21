@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use Auth;
 use App\User;
+use Auth;
 use App\Order;
 use App\Line;
 use App\Product;
@@ -90,10 +90,6 @@ class UserController extends Controller
         //
     }
 
-
-    public static function perfilUsuario(){
-        return view("usuarios.perfil");
-    }
     /**
      * Saca todos los Usuarios tipo Usuario
      *
@@ -103,22 +99,21 @@ class UserController extends Controller
     public static function listarUsuarios(){
         $usuarios = User::all()
             ->where('role', 'Usuario');
-        return $usuarios;
+
+        return json_encode($usuarios);
     }
 
     public static function historialUsuario(){
-
         $historiales = User::select('lines.id_order','orders.payment_methods','orders.total_price','products.price','orders.date','lines.quantity','products.name')
             ->join('orders','users.nif','=','orders.nif')
             ->join('lines','orders.id','=','lines.id_order')
             ->join('products','lines.id_product','=','products.id')
-            ->where('users.email',Auth::user()->email)
+            ->where('orders.nif',Auth::user()->nif)
             ->get();
         return $historiales;
     }
-
     public static function historialAdmin($nif){
-        $historiales = User::select('lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
+        $historiales = User::select('lines.id_order','orders.payment_methods','orders.total_price','products.price','orders.date','lines.quantity','products.name')
             ->join('orders','users.nif','=','orders.nif')
             ->join('lines','orders.id','=','lines.id_order')
             ->join('products','lines.id_product','=','products.id')
@@ -126,9 +121,9 @@ class UserController extends Controller
             ->get();
         return $historiales;
     }
-
+    
     public static function historialImporte($nif,$importe){
-        $historiales = User::select('lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
+        $historiales = User::select('lines.id_order','orders.payment_methods','orders.total_price','products.price','orders.date','lines.quantity','products.name')
             ->join('orders','users.nif','=','orders.nif')
             ->join('lines','orders.id','=','lines.id_order')
             ->join('products','lines.id_product','=','products.id')
@@ -139,7 +134,7 @@ class UserController extends Controller
     }
 
     public static function historialFecha($nif,$fecha){
-        $historiales = User::select('lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
+      $historiales = User::select('lines.id_order','orders.payment_methods','orders.total_price','products.price','orders.date','lines.quantity','products.name')
             ->join('orders','users.nif','=','orders.nif')
             ->join('lines','orders.id','=','lines.id_order')
             ->join('products','lines.id_product','=','products.id')
@@ -150,16 +145,16 @@ class UserController extends Controller
     }
 
 
-    /*
-    public static function historialUsuario(){
-        $historiales = User::select('line_product.id_order','orders.payment_method','orders.total_price','products.price','orders.date','line_product.quantity','products.name')
-            ->join('orders','users.nif','=','orders.nif')
-            ->join('line_product','orders.id','=','line_product.id_order')
-            ->join('products','line_product.id_product','=','products.id')
-            ->where('orders.nif',Auth::user()->nif)
-            ->get();
-        return $historiales;
-    }*/
+
+    //    public static function historialUsuario($nif){
+    //        $historiales = User::select('line_product.id_order','orders.payment_methods','orders.total_price','products.price','orders.date','line_product.quantity','products.name')
+    //            ->join('orders','users.nif','=','orders.nif')
+    //            ->join('line_product','orders.id','=','line_product.id_order')
+    //            ->join('products','line_product.id_product','=','products.id')
+    //            ->where('orders.nif',$nif)
+    //            ->get();
+    //        return $historiales;
+    //    }
 
     /*
     ->select('nif','name', 'surname1', 'surname2', 'email', 'date_of_birth')
