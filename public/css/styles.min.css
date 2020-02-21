@@ -579,8 +579,8 @@ header{
     cursor:pointer;
 }
 
-#lupaHeader{
-    width: 4%;
+#flechaHeader{
+    width: 3%;
     margin-left: 17px;
     margin-bottom: 7px;
 }
@@ -926,8 +926,8 @@ div.social-links {
 */
 
 #contenedor-listar{
-    margin-top: 5%;
-    margin-bottom: 15%;
+    padding-top: 3%;
+    padding-bottom: 7%;
 }
 
 table td{
