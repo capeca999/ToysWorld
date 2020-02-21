@@ -28,14 +28,14 @@
                 Categoría
                 <select name="categoria" id="select-categoria">
                     <option value="all">Seleccionar Todo</option>
-                    @for($i=0;$num_categorias>$i;$i++)
+                    @for($i=0;$num_categorias ?? ''>$i;$i++)
                     <option value="{{$categorias[$i]->name}}">{{$categorias[$i]->name}}</option>
                     @endfor
                 </select>
                 Provincia de Usuarios
                 <select id="provincia" name="provincia">
                     <option selected>Seleccionar Todo</option>
-                    @for($i=0;$num_provincias>$i;$i++)
+                    @for($i=0;$num_provincias ?? ''>$i;$i++)
                     <option>{{$provincias[$i]->province}}</option>
                     @endfor
                 </select>
