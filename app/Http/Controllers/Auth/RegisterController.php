@@ -40,7 +40,9 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
+    static  function   LetraNIF ($dni) {
+        return $letraNif= substr ("TRWAGMYFPDXBNJZSQVHLCKEO", $dni % 23, 1);
+        } 
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,9 +53,9 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'email:rfc,dns','string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'nif' => ['required', 'string', 'min:8', 'max:8', 'unique:users'],
+            'nif' => ['required', 'string', 'min:8', 'regex:/^[0-9]+$/',  'max:8', 'unique:users'],
             'date_of_birth' =>['required', 'date'],
             'surname1' =>['nullable',  'string', 'min:2'],
             'surname2' =>['nullable',  'string', 'min:2'],
@@ -73,7 +75,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'nif' => $data['nif'],
+            'nif' => $data['nif'] . self::LetraNIF($data['nif']),
             'date_of_birth' => $data['date_of_birth'],
             'role' => "Usuario",
             'surname1' =>$data['surname1'],
