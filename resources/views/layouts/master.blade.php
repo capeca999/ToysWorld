@@ -26,30 +26,30 @@
                 <a class="d-none d-md-inline-flex " href="{{url('/productos/busqueda/')}}"><img class="cursorHand iconos ml-5" src="/img/lupa.png" alt="Busqueda"></a>
                 <input id="inputHeader" class="ml-5" type="text"  placeholder="Buscar juguetes"><img id="flechaHeader" class="cursorHand" src="/img/flechaderecha.png" alt="flecha">
             </div>
-
             <div class="col-md-3 col-12 ml-4 ml-sm-5 ml-md-0 mt-4">
+              
                @if(Auth::user()==null)
-
                 <a href="{{url('/login/')}}"><img class="cursorHand iconos ml-3" src="/img/icons/login.svg" id="loginHeader" alt="Login" title="Login"></a>
+                
                 <a href="{{url('/register/')}}"><img class="cursorHand iconos ml-5" src="/img/icons/register.svg" id="registerHeader" alt="Registrarse" title="Registrarse"></a>
-                @endif
-
-            @if(Auth::user()!=null)
-                       <a href="{{url('/usuario/perfil/')}}"><img class="cursorHand iconos ml-5" src="/img/avatar.png" id="avatarHeader" alt="Perfil" title="Perfil"></a>
-                      <!-- <a href="{{url('logout')}}"><img class="cursorHand iconos ml-3" src="/img/icons/logout.svg" id="logoutHeader" alt="Logout" title="Logout"></a>
--->
-                       <a href="{{ route('logout') }}" id="logout"><img class="cursorHand iconos ml-3" src="/img/icons/logout.svg" id="logoutHeader" alt="Logout" title="Logout">
-                           Logout
-                       </a>
+                
+                <a href="{{url('/cesta/')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
+               @endif
+               
+               @if(Auth::user()!=null)
+                       <a href="{{ route('logout') }}" id="logout"><img class="cursorHand iconos ml-3" src="/img/icons/logout.svg" id="logoutHeader" alt="Logout" title="Logout"></a>
+                       
                        <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                            {{ csrf_field() }}
                        </form>
 
+                       <a href="{{url('/usuario/perfil/')}}"><img class="cursorHand iconos ml-5" src="/img/avatar.png" id="avatarHeader" alt="Perfil" title="Perfil"></a>
+                       <a href="{{url('/cesta/')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
+                    
+                       <a href="{{url('/usuario/listar/')}}"><img class="cursorHand iconos ml-5" src="/img/listarUsuarios.png" id="lista1Header" alt="listarUsuarios" title="listarUsuarios"></a>
+                       <a href="{{url('/producto/listar')}}"><img class="cursorHand iconos ml-5" src="/img/listarProductos.png" id="lista2Header" alt="listarProductos" title="listarProductos"></a>         
+                @endif
 
-
-
-                   @endif
-                   <a href="{{url('/cesta/')}}"><img class="cursorHand iconos ml-5" src="/img/icons/basket.svg" id="cestaHeader" alt="Cesta" title="Cesta"></a>
             </div>
         </div>
     </header>   
