@@ -2,7 +2,7 @@
 $(function(){
     
     //Añade un controlador de click para redirigir a la página de búsqueda con el valor del input (siempre que no esta vacío)
-    $('#lupaHeader').click(function(){
+    $('#flechaHeader').click(function(){
        if($('#inputHeader').val()!=''){
             var ventana = '/productos/busqueda/'+$('#inputHeader').val();  
             location.href=ventana; 
