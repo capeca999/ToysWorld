@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('contenido')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <section id="carousel">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">
@@ -67,4 +68,7 @@
 
         </div>
     </div>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+ 
 @endsection
