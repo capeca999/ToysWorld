@@ -1,5 +1,4 @@
 $(function () {
-alert("hola");
     $("#refresh").click(function () {
 
         $.ajax({
