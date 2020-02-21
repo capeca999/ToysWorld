@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use App\User;
 
-// ¿?¿?
 use App\Order;
 use App\Line;
 use App\Product;
@@ -90,9 +89,9 @@ class UserController extends Controller
     {
         //
     }
-public static function perfilUsuario(){
-return view("usuarios.perfil");
-}
+    public static function perfilUsuario(){
+        return view("usuarios.perfil");
+    }
     /**
      * Saca todos los Usuarios tipo Usuario
      *
@@ -123,7 +122,7 @@ return view("usuarios.perfil");
             ->get();
         return $historiales;
     }
-    
+
     public static function historialImporte($nif,$importe){
         $historiales = User::select('lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
             ->join('orders','users.nif','=','orders.nif')
@@ -136,7 +135,7 @@ return view("usuarios.perfil");
     }
 
     public static function historialFecha($nif,$fecha){
-      $historiales = User::select('lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
+        $historiales = User::select('lines.id_order','orders.payment_method','orders.total_price','products.price','orders.date','lines.quantity','products.name')
             ->join('orders','users.nif','=','orders.nif')
             ->join('lines','orders.id','=','lines.id_order')
             ->join('products','lines.id_product','=','products.id')
