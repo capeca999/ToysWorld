@@ -14,18 +14,15 @@
 */
 Route::get('/home','PrincipalController@index' );
 Route::get('/', 'PrincipalController@index');
-
 Auth::routes();
-
-Route::get('/productos/busqueda', function () {
-    return view('search');
-});
+Route::get('/productos/busqueda', 'ApiController@indexToysGenerico');
+Route::get('/productos/busqueda/{nombre}/{pagina?}', 'ApiController@indexToysName');
 
 
 Route::get('watermark-image', 'WaterMarkController@imageWatermark');
 Route::get('watermark-text', 'WaterMarkController@textWatermark');
 
-
+Route::middleware('auth')->get('/usuario/perfil', 'UserController@perfilUsuario');
 
 Route::get('cesta/pagar', function () {
     return view('paginaDePago');
