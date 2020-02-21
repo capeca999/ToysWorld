@@ -31,13 +31,13 @@
 
             @foreach($productos as $producto)
         <div class="col-sm-6 col-md-4 product-item animation-element slide-rotate-clockwise">
-                <div class="product-container">
+                <div class="product-container" onclick="clickProducto({{$producto->id}})">
                     <div class="row">
-                        <div class="col-md-12"><a href="/producto/{{$producto->id}}"  class="product-image"><img src="/img/{{$producto->id}}.jpg"></a></div>
+                        <div class="col-md-12"><a class="product-image"><img src="/img/{{$producto->id}}.jpg"></a></div>
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <h2><a href="/producto/{{$producto->id}}" >{{$producto->name}}</a></h2>
+                            <h2><a>{{$producto->name}}</a></h2>
                         </div>
 
                     </div>
