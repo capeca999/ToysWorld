@@ -9,8 +9,9 @@
 @endsection
 
 @section('contenido')
+<div style="display:none" id="metodosEscondidos">{{$mpagos}}</div>
 <div id="mainPaginaDePago">
-   <section class="row ml-5">
+   <section class="row ml-5" id="sectionDePago">
     <article class="col-md-5 p-5" id="productosCesta">
         <table cellpadding="15" class="tablasDePago">
            <form action="post">
@@ -285,9 +286,9 @@
                         <option value="Paypal">Paypal</option>
                         <option value="Paysafecard">PaySafeCard</option>
                         <option value="Visa">Tarjeta VISA</option>
-                        <option value="Mastercard">Tarjeta Mastercard</option>
+                        <option value="MasterCard">Tarjeta Mastercard</option>
                     </select>
-               </td>
+               </td><td id="tickVerde"></td>
             </tr>
            </form> 
         </table>

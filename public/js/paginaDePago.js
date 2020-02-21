@@ -14,14 +14,35 @@ $(function(){
         
     //Comprueba si existe el método de pago que se selecciona y en caso contrario pone un formulario para añadirlo 
     $('#seleccionMetodoDePago').change(function(){
+        $('#botonPagoFinal').remove();
+        $('#tickVerde').html('');
+        var metodosDisponibles = JSON.parse($('#metodosEscondidos').html());
         var metodo = $('#seleccionMetodoDePago option:selected').val();
         var existe = false;
-        metodosDePagoDelUsuario.forEach(comprobar);
-        $.each(metodosDePagoDelUsuario, function(){
-            console.log(this.name);
-        })
-//        alert(existe);
+        $.each(metodosDisponibles, function(index, met){
+           console.log(met);
+           if(met['name']==metodo){
+                existe=true;
+           } 
+        });
+        if(existe){
+            ponerBotonDePago();
+        }else{
+            ponerFormMet();
+        }
     });
+    
+    function ponerBotonDePago(){
+        var tickVerde = $('<img>').attr('src','/img/tickverde.png');
+        var botonPago = $('<img>').attr('src','/img/botonpago.png').attr('style','margin-left:3%;').attr('id','botonPagoFinal');
+        $('#sectionDePago').append(botonPago);
+        $('#tickVerde').append(tickVerde);
+    }
+    
+    function ponerFormMet(){
+        var cruzRoja = $('<img>').attr('src','/img/equisroja.png');
+        $('#tickVerde').append(cruzRoja);
+    }
     
     //Obtiene la cookie con el nombre pasado como parámetro
     function getCookie(cname) {

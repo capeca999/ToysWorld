@@ -24,9 +24,7 @@ Route::get('watermark-image', 'WaterMarkController@imageWatermark');
 Route::get('watermark-text', 'WaterMarkController@textWatermark');
 
 Route::middleware('auth')->get('/usuario/perfil', 'UserController@perfilUsuario');
-Route::get('cesta/pagar', function () {
-    return view('paginaDePago');
-});
+Route::get('cesta/pagar','pagoController@getMetodos');
 /*
 |--------------------------------------------------------------------------
 | CRUD Usuario
