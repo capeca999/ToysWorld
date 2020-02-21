@@ -1,4 +1,4 @@
-<?php
+<<?php
 
 namespace App\Http\Controllers;
 
@@ -16,7 +16,6 @@ class ApiController extends Controller
         return Product::all()->where('state','=','alta')->skip(($numPag-1)*$productosPorPagina)->take($productosPorPagina);
 
 */
-
 
 
 public function indexToysGenerico(){
@@ -45,7 +44,6 @@ $cantidad=21;
     if($pagina<1){
         $pagina=1;
     }
-//select * from products where name like '%H%'
 $pagina--;
 return Product::all()->where('name', 'like', '%'.$nombreToy.'%')->splice(($cantidad*$pagina), $cantidad)->toJson();
 }
@@ -59,9 +57,6 @@ public static function  getToys($pagina, $cantidad=21 ){
         $pagina=1;
     }
     $pagina--;
-
-
-
         return Product::all()->splice(($cantidad*$pagina), $cantidad)->toJson();
  
     //      return json_encode(Product::all()->take(($pagina*21)));
@@ -76,6 +71,8 @@ public static function  getToys($pagina, $cantidad=21 ){
         if ($pagina < 1){
             $pagina=1;
         }
+
+        $pagina--;
         //      return json_encode(Product::all()->take(($pagina*21)));
         return Product::all()->where('id_category', '=', $categoria)->splice(($cantidad*$pagina), $cantidad)->toJson();
         
