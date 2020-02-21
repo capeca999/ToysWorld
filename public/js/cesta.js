@@ -55,12 +55,15 @@ $(function(){
     
     //Controla el click sobre el boton de "pagar", te redirige a la página de pago si estas logueado y en caso contrario a la página de registro
     $('#botonPago').click(function(){
-//        if(Auth::user()!=null&&precios!=undefined){
-//            setCookie('preciosDeCesta',precios,45);
-//            location.href="/cesta/pagar";
-//        }else{
-//            location.href="/register";
-//        }
+        var user = getCookie('logueado');
+        if(user==null){
+            location.href="/register";
+        }else if(precios!=undefined){
+            setCookie('preciosDeCesta',precios,45);
+            location.href="/cesta/pagar";
+        }else{
+            location.href="/";
+        }
     });
     
     //Al clickar en el icono de la papelera elimina el elemento de la cesta y recarga la página
