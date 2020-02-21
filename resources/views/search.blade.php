@@ -12,15 +12,15 @@
 @section('contenido')
 <input type="hidden" id="valorBuscar" value="{{$nombre ?? ''}}">
 
-    <form class="form-inline">
+    <form class="form-inline ml-5 mb-3">
         <div class="form-group">
-            <label>Categorias</label>
+            <label class="mr-3">Categorias</label>
             <select class="form-control" id="categoriasDesplegable">
                 <option value="0">Selecciona Categoria</option>
             </select>
         </div>
         <div class="form-group">
-            <label>Productos Por Página:</label>
+            <label class="mr-3 ml-3">Productos Por Página:</label>
 
             <input class="form-control" placeholder="21" min="0" type="number">
 
@@ -28,7 +28,6 @@
     </form>
     <div class="container">
         <div class="row product-list dev" id="listaProductos">
-
 
             @foreach($productos as $producto)
         <div class="col-sm-6 col-md-4 product-item animation-element slide-rotate-clockwise">
