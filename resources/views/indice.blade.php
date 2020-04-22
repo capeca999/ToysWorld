@@ -1,26 +1,31 @@
 @extends('layouts.master')
+@section('titulo')
+   - Página Principal
+@endsection
 @section('contenido')
+
+<link rel="icon" href="{{ URL::asset('/css/icon.png') }}" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <section id="carousel">
         <div class="carousel slide" data-ride="carousel" id="carousel-1">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item">
                     <div class="jumbotron pulse animated hero-primera carousel-hero">
-                        <h1 class="hero-title">Los mejores juguetes del planeta</h1>
-                        <p class="hero-subtitle">Estos son los mejores juguetes de todo el planeta</p>
+                        <h1 class="hero-title">Animales con ansias de conocerte</h1>
+                        <p class="hero-subtitle">Estos son los animales mas bonitos que conoceras</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="jumbotron pulse animated hero-segunda carousel-hero">
-                        <h1 class="hero-title">Lo mejor para nuestros pequeños</h1>
-                        <p class="hero-subtitle">Nuestros hijos son lo más importante que tenemos y por ello merecen lo mejor</p>
+                        <h1 class="hero-title">Porque comprar cuando puedes adoptar?</h1>
+                        <p class="hero-subtitle">Dales un hogar a estos gordines</p>
 
                     </div>
                 </div>
                 <div class="carousel-item active">
                     <div class="jumbotron pulse animated hero-tercera carousel-hero">
-                        <h1 class="hero-title">Ofertas de primavera</h1>
-                        <p class="hero-subtitle">Disfruta ya de los mejores productos rebajados más que nunca en ToysWorld</p>
+                        <h1 class="hero-title">Muchos animales!</h1>
+                        <p class="hero-subtitle">Tenemos muchos animales que buscan hogar!</p>
 
                     </div>
                 </div>
@@ -38,26 +43,30 @@
     </section>
 
     <div class="container">
+
+    <form action="https://google.com">
+    <input type="submit" class="verTodos" value="todos los animales" />
+</form>
+
         <div class="row product-list dev">
 
-            @foreach($juguetes as $juguete)
+            @foreach($animales as $animal)
                <div class="col-sm-6 col-md-4 product-item animation-element slide-top-left">
-                <div class="product-container" onclick="clickProducto({{$juguete['producto']->id}})">
+                <div class="product-container" onclick="clickProducto({{$animal->id}})">
                     <div class="row">
-                        <div class="col-md-12"><a class="product-image"><img src="/img/{{$juguete['producto']->id}}.jpg"></a></div>
+                        <div class="col-md-12"><a class="product-image"><img class="imagenes_animales" src="{{$animal->url}}"></a></div>
                     </div>
                     <div class="row">
                         <div class="col-8">
-                            <h2>{{$juguete['producto']->name}}</h2>
+                            <h2>{{$animal->nickname}}</h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <p class="product-description">{{$juguete['producto']->description}}</p>
+                            <p class="product-description">{{$animal->description}}</p>
                             <div class="row">
-                                <div class="col-6"> <button class="btn btn-light" type="button">Buy Now!</button></div>
+                                <div class="col-6"> <button class="btn btn-light" type="button">Mas Sobre {{$animal->nickname}}</button></div>
                                 <div class="col-6">
-                                    <p class="product-price">Precio: {{$juguete['producto']->price}} €</p>
                                 </div>
                             </div>
                         </div>

@@ -5,44 +5,59 @@
 @endsection
    
 @section('contenido')                
-        <section>
-            <article class="tituloDeAuxiliares1 muygrande">Política de privacidad</article>
-            <article class="tituloDeAuxiliares2 medio">
-                <b>Responsable del tratamiento de tus datos personales</b><br><br>
-                    Toysworld, S.A.U. (TTW), con CIF A-79233256, y domicilio en Manises (Valencia), Plaza Rafael Atard 24, e inscrita en el Registro Mercantil de Valencia, Tomo 455, Folio 58, Hoja M-8754, recoge y procesa los datos personales que nos has proporcionado, como cliente, futuro cliente, o por el uso que haces de nuestra web. Esta Política de Privacidad se ha creado de conformidad con el Reglamento 2016/679, de Protección de datos y demás normativa de aplicación sobre la materia. Esta Política se limita a los residentes de la Unión Europea que utilizan nuestra web o son titulares de la tarjeta TOYS y tiene por finalidad explicar qué información personal nos has proporcionado y cómo la usamos para comercializar nuestros bienes y/o ofrecer nuestros servicios. TTW comercializa bienes y presta servicios a sus clientes. Por ello, somos el Responsable del tratamiento de datos según la normativa de Protección de Datos Personales. Incluimos en esta Política de Privacidad un resumen de tus derechos para que puedas controlar cómo usamos tu información personal. TTW te informará sobre cualquier actualización que pueda afectar al tratamiento de tus datos personales. Tu compra periódica, a través de nuestras tiendas y/o sitio web, y/o el uso de nuestros servicios indicará que conoces las actualizaciones que hagamos sobre esta Política de Privacidad.<br><br>
-                    
-                    <b>¿Qué información personal nos proporcionas?</b><br><br>
-
-                    Tu información personal incluye cualquier información que se relaciona contigo en la que se te identifica o puedes ser identificado. Esto incluye tu nombre, dirección, teléfono fijo móvil, e-mail, información de pago, historial de compras, destinatario de la compra, direcciones de entrega, nombres y edades de niños, amigos, parientes, etc. <br><br><br>
-                    
-                    <b>Con qué finalidades tratamos tus datos?</b><br><br>
-
-                    Toda la información personal que obtenemos de ti es usada para proporcionarte los productos que nos has solicitado o para un tercero que nos digas; para cumplir con nuestras obligaciones contractuales de proporcionarte servicios, así como para gestionar tu cuenta personal. Por favor, ten en cuenta que tu respuesta negativa u objeción para proporcionar la información personal necesaria con estas finalidades podría impedir a TTW prestar alguno de los servicios mencionados.<br><br>
-
-                    Nos gustaría usar tu nombre y dirección de correo electrónico para informarte también de nuestros productos, servicios, ofertas y promociones, así como para enviarte cupones descuento para canjearlos por productos que comercializamos. Por ello, cuando hayas realizado una compra en nuestra web o en nuestras tiendas podremos enviarte comunicaciones de marketing, publicitarias o promocionales sobre productos similares a los adquiridos con el fin de que estés al tanto de nuestras novedades y actividades. Te ofreceremos el derecho de darte de baja en cada comunicación electrónica mediante correo electrónico o a través de nuestra web.<br><br><br>
-                    
-                    <b>¿Por cuánto tiempo conservamos tus datos?</b><br><br>
-
-                    Conservaremos tus datos personales durante el tiempo que dure la relación comercial con TTW y durante los cuatros años posteriores a la última compra que hayas realizado. Después de que este período haya expirado, toda tu información personal se suprimirá automáticamente.<br><br><br>
-
-                    <b>¿Cuál es nuestra legitimación para el tratamiento de tus datos?</b><br><br>
-
-                    En concreto, tratamos tus datos sobre la base de nuestros intereses legítimos comerciales para gestionar cualquier asunto técnico o solicitudes de apoyo que puedan surgir para cumplir con nuestras obligaciones comerciales, legales y contractuales. Además, nuestros intereses legítimos o los que proceden de terceros pueden obligarnos a usar tu información personal en procesos judiciales o para otras finalidades legales que puedan afectar a TTW, pudiendo incluir la necesidad de transferir tu información personal a terceros países con normativa de protección de datos baja. En ese caso, tomaremos las medidas adecuadas para proteger tu información personal como exige la normativa de Protección de datos.<br><br>
-
-                    TTW salvaguardará la privacidad y la seguridad de categorías especiales de información de conformidad con lo exigido por la normativa de Protección de datos.<br><br>
-
-                    También usamos tu información con finalidades publicitarias, promocionales y/o de marketing donde, si no has comprado ningún producto en nuestra web, debes darnos tu consentimiento para recibir comunicaciones para esta finalidad. Puedes decirnos en cualquier momento que no quieres recibir comunicaciones con esta finalidad aunque nos hubieras dado tu consentimiento con anterioridad. También estamos legitimados para tratar tu información personal con el fin de cumplir con nuestras obligaciones contractuales y legales, siempre de conformidad con la normativa de Protección de datos.<br><br><br>
-                    <b>¿A qué destinatarios comunicaremos tus datos?</b><br><br>
-
-                    Si en algún momento enviásemos tu información personal a quien pudiera estar localizado fuera de la Unión Europea, proporcionaremos un nivel adecuado de protección de tu información personal, incluyendo medidas de seguridad, técnicas y organizativas apropiadas a través de la realización de protocolos de transferencia apropiados que aseguren que se realiza conforme la normativa aplicable.
-
-                    Tu información personal es tratada por entidades localizadas en la Unión Europea, la cual se almacena en servidores localizados en dicho territorio.<br><br>
-
-                    No permitimos que ningún tercero tenga acceso a tu información personal, excepto cuando sea requerido o permitido por la normativa aplicable de acuerdo con esta Política de Privacidad. Podemos comunicar tu información personal a nuestros subcontratistas, agentes o proveedores de servicios de pago con los que hemos contratado para que nos asistan en la prestación de servicios, con la condición de que dicho subcontratista o agente consienta por escrito cumplir con los estándares de seguridad y privacidad descritos en esta Política. Si el destinatario está localizado en un país en el que no tiene leyes de Protección de Datos adecuadas y no está certificado bajo “Privacy Shield”, formalizaremos cláusulas contractuales estándares para proteger tu información personal transferida en la forma aprobada por la Comisión Europea.<br><br><br>
-                    
-                    <b>¿Cómo protegemos tu información personal?</b><br><br>
-
-                    TTW entiende que la custodia de datos de forma segura es esencial. TTW almacena la información personal y otros datos usando medidas de protección físicas, técnicas y administrativas razonables para asegurar los datos contra riesgos previsibles, como un uso no autorizado, acceso, revelación, destrucción o modificación. Aunque hagamos esfuerzos de buena fe para custodiar la información que obtenemos en un entorno operativo seguro, que no está disponible para el público en general, no podemos garantizar la seguridad completa. Mientras trabajamos para asegurar la integridad y la seguridad de nuestra red y sistemas, no podemos garantizar que nuestras medidas de seguridad prevendrán a los "hackers" de obtener ilegalmente esta información.<br><br><br>
-           </article>
-        </section>
+<div class="container">
+	<div class="col-xs-12">
+		<h2>Privacy Policy</h2>
+		<br>
+		<p>By visiting this website you agree to be bound by the terms and conditions of this privacy policy. If you do not agree, please do not use or access our website. By mere use of the Website, you expressly consent to, our use and disclosure, of your personal information in accordance with this Privacy Policy. This Privacy Policy is subject to the Terms of Services.</p>
+        <p>We, at Toiljobs value the trust you place in us. We insist upon the highest standards for secure transactions and customer's information privacy. Please read the following statements to learn about our information gathering and dissemination practices. Our privacy policy is subject to change at any time without notice. To make sure you are aware of any changes, please review this policy periodically</p>
+        <p>We, at 'Tummys' and our affiliated companies/organisations worldwide, are committed to respecting your online privacy and recognize your need for appropriate protection and management of any personally identifiable information ("Personal Information") you share with us. In order to provide a personalised browsing experience, Toiljobs.com may collect information from you, this may include technical or other related information from the device used to access Toiljobs.com including without limitation contact lists in your device and its location, you may also be asked to complete a registration form. When you let us have your preferences, we will be able to deliver or allow you to access the most relevant information that meets your end.</p>
+        <p>"Personal Information" means any information that may be used to identify an individual, including, but not limited to, a first and last name, a home or other physical address and an email address or other contact information, whether at work or at home. In general, you can visit all web pages without telling us who you are or revealing any Personal Information about yourself.</p><br>
+        <h4>Cookies and Other Tracking Technologies</h4>
+        <p>Some of our web pages utilize "cookies" and other tracking technologies. A "cookie" is a small text file that may be used, for example, to collect information about activity on the web site. Some cookies and other technologies may serve to recall Personal Information previously indicated by a Web user. Most browsers allow you to control cookies, including whether or not to accept them and how to remove them.</p>
+        <p>You may set most browsers to notify you if you receive a cookie, or you may choose to block cookies with your browser, but please note that if you choose to erase or block your cookies, you will need to re-enter your original user ID and password to gain access to certain parts of the web site. </p>
+        <p>Tracking technologies may record information such as internet domain and host names; internet protocol (IP) addresses; browser software and operating system types; clickstream patterns; and dates and times that our site is accessed. Our use of cookies and other tracking technologies allows us to improve our web site and your web experience. We may also analyze information that does not contain Personal Information for trends and statistics.</p><br>
+        <h4>Third Party Services</h4>
+        <p>Third parties provide certain services available on www.tummys.cat . 'Tummys' may provide information, including Personal Information, that 'Tummys' collects on the web to third-party service providers to help us deliver programs, products, information, and services. Service providers are also an important means by which 'Tummys' maintains its websites and mailing lists. 'Tummys' will take reasonable steps to ensure that these third-party service providers are obligated to protect Personal Information on Tummys’s behalf.</p>
+        <p>'Tummys' does not intend to transfer Personal Information without your consent to third parties who are not bound to act on Tummys's behalf unless such transfer is legally required. Similarly, it is against Tummys's policy to sell Personal Information collected online without consent.</p><br>
+        <h4>Your Consent</h4>
+        <p>By using this web site, you consent to the terms of our online Privacy Policy and to Tummys's processing of Personal Information for the purposes given above as well as those explained where 'Tummys' collects Personal Information on the web</p><br>
+        <h4>Information security</h4>
+        <p>•    We take appropriate security measures to protect against unauthorized access to or unauthorized alteration, disclosure or destruction of data</p>
+        <p>•	We restrict access to your personally identifying information to employees who need to know that information in order to operate, develop or improve our services</p><br>
+	    <h4>Updating your information</h4>
+	    <p>We provide mechanisms for updating and correcting your personally identifying information for many of our services. For more information, please see the help pages for each service</p><br>
+        <h4>Children</h4>
+        <p>'Tummys' will not contact children under age 13 about special offers or for marketing purposes without a parent's permission</p><br>
+        <h4>Information Sharing and Disclosure</h4>
+        <ul type="disc" class="privacy">
+            <li>'Tummys' does not rent, sell, or share personal information about you with other people (save with your consent) or non-affiliated companies except to provide products or services you've requested, when we have your permission, or under the following circumstances
+                <ul type="circle"  class="pricavy">
+                    <li>We provide the information to trusted partners who work on behalf of or with 'Tummys' under confidentiality agreements. These companies may use your personal information to help 'Tummys’ communicate with you about offers from 'Tummys and our marketing partners. However, these companies do not have any independent right to share this information</li>
+                    <li>We respond to subpoenas, court orders, or legal process, or to establish or exercise our legal rights or defend against legal claims</li>
+                    <li>We believe it is necessary to share information in order to investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the physical safety of any person, violations of Tummys's terms of use, or as otherwise required by law</li>
+                    <li>We transfer information about you if 'Tummys' is acquired by or merged with another company. In this event, 'Tummys' will notify you before information about you is transferred and becomes subject to a different privacy policy</li>
+                </ul>
+            </li>
+            <li>
+                'Tummys' displays targeted advertisements based on personal information. Advertisers (including ad serving companies) may assume that people who interact with, view, or click on targeted ads meet the targeting criteria - for example, women ages 18-24 from a particular geographic area
+                <ul type="circle" class="privacy">
+                    <li>'Tummys' does not provide any personal information to the advertiser when you interact with or view a targeted ad. However, by interacting with or viewing an ad you are consenting to the possibility that the advertiser will make the assumption that you meet the targeting criteria used to display the ad</li>
+                    <li>'Tummys' advertisers include financial service providers (such as banks, insurance agents, stock brokers and mortgage lenders) and non-financial companies (such as stores, airlines, and software companies)</li>
+                </ul>
+            </li>
+        </ul><br>
+        <h4>Confidentiality and Security</h4>
+        <p>•	We limit access to personal information about you to employees who we believe reasonably need to come into contact with that information to provide products or services to you or in order to do their jobs</p>
+        <p>•	"We have physical, electronic, and procedural safeguards that comply with the laws prevalent in India to protect personal information about you. We seek to ensure compliance with the requirements of the Information Technology Act, 2000 as amended and rules made thereunder to ensure the protection and preservation of your privacy</p><br>
+        <h4>Changes to this Privacy Policy</h4>
+        <p>'Tummys' reserves the right to update, change or modify this policy at any time. The policy shall come to effect from the date of such update, change or modification.</p><br>
+        <h4>Disclaimer </h4>
+        <p>Tummys uses the maximum care as is possible to ensure that all or any data / information in respect of electronic transfer of money does not fall in the wrong hands. For completing online transactions involving payments a user is directed to a secured payment gateway, Tummys does not store or keep financial data such as credit card numbers/passwords/PINs etc "Personal Account Related Information". Since the transaction happens on a third party network not controlled by Tummys, once an online transaction has been completed, the Personal Account Related Information is not accessible to anyone at Tummys after completion of the online transaction at the payment gateway, this ensures maximum security.<br><br>Tummys shall not be liable for any loss or damage sustained by reason of any disclosure (inadvertent or otherwise) of any information concerning the user's account and / or information relating to or regarding online transactions using credit cards / debit cards and / or their verification process and particulars nor for any error, omission or inaccuracy with respect to any information so disclosed and used whether or not in pursuance of a legal process or otherwise</p><br>
+        <h4>Contact Information</h4>
+        <p>'Tummys' welcomes your comments regarding this privacy statement at the contact address given at the website. Should there be any concerns about contravention of this Privacy Policy, 'Tummys' will employ all commercially reasonable efforts to address the same. 
+        Note : The terms in this agreement may be changed by Tummys at any time. Tummys is free to offer its services to any client/prospective client without restriction
+        </p>
+	</div>
+</div>
 @endsection

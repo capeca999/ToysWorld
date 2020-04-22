@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Product;
+use App\Animal;
 use Auth;
 
 class PrincipalController extends Controller
@@ -16,6 +16,6 @@ class PrincipalController extends Controller
             setcookie('logueado',null,-1);
         }
     
-        return view("indice")->with('juguetes' , ProductController::getMostSelled());
+        return view("indice")->with('animales' , AnimalController::getNewerAnimals());
     }
 }

@@ -12,6 +12,53 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('animales/', function() {
+    return view('animalesCategorias');
+    });
+
+    
+
+    Route::get('/politicaPrivacidad/', function() {
+        return view('politicaDePrivacidad');
+        });
+    
+        Route::get('/donarProductos/', function() {
+            return view('donarProductos');
+            });
+        
+        
+    Route::get('/condicionesAdoptar/', function() {
+        return view('condicionesAdoptar');
+        });
+
+
+        Route::get('/condicionesAdoptar/', function() {
+            return view('condicionesAdoptar');
+            });
+    
+    
+
+        Route::get('/sobreNosotros/', function() {
+            return view('sobreNosotros');
+            });
+        
+    
+            Route::get('/faq/', function() {
+                return view('faq');
+                });
+
+
+
+                
+Route::get('/preguntas/', 'PreguntasController@indexJugetesDias');
+
+
+
+    Route::get('/animales/{especie}', 'ApiController@getAnimalsSpecie');
+
+Route::get('/animal/{id}', 'AnimalController@getAnimalID');
+
 Route::get('/home','PrincipalController@index' );
 Route::get('/', 'PrincipalController@index');
 Auth::routes();
@@ -35,12 +82,10 @@ Route::get('cesta/pagar','pagoController@getMetodos');
 */
 Route::group(['prefix' => 'usuario'], function(){
 
-    /*Route::get('perfil/{nif}', function ($nif) {
-        return view('usuarios.perfil')->with('nif',$nif);
-    });
-    Route::get('perfil/{nif}/historial/', 'UserController@historialUsuario');
-*/
-  
+ 
+
+                              
+
 
     Route::middleware('auth')->get('perfil/historial/', 'UserController@historialUsuario');
 
@@ -55,6 +100,9 @@ Route::group(['prefix' => 'usuario'], function(){
     Route::get('registro/', function () {
         return view('auth.register');
     });
+
+
+
     Route::get('login/', function () {
         return view('auth.login');
     });
@@ -87,8 +135,7 @@ Route::get('cesta/',function(){
     return view('cesta');	   
 }); 	
                               
-                              
-                    
+
 
 /*
 |--------------------------------------------------------------------------

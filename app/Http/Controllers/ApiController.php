@@ -6,6 +6,8 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Animal;
+use DB;
 
 class ApiController extends Controller
 {
@@ -16,6 +18,38 @@ class ApiController extends Controller
         return Product::all()->where('state','=','alta')->skip(($numPag-1)*$productosPorPagina)->take($productosPorPagina);
 
 */
+
+
+
+public function getAnimalsSpecie($especie){
+    $animales = $this::getAnimalsSpecieList(1, $especie, 20);
+
+    return view ('animales')->with('animales', json_decode($animales));
+
+}
+
+
+public static function getAnimalsSpecieList($pagina=1, $especie, $cantidad=20){
+
+if($cantidad<=0){
+    $cantidad=20;
+}
+
+if($pagina<1){
+    $pagina=1;
+}
+
+$pagina--;
+
+return Animal::select('animals.id', 'animals.race', 'animals.species','animals.date_of_birth','animals.description','animals.nickname', 'animals.place_found', 'animals.date_found', 'images.url')
+->join('images', 'images.id_animal', '=',  'animals.id')
+->where('species', 'like', $especie)
+->groupBy('animals.id')
+->get()
+->splice(($cantidad*$pagina), $cantidad)
+->toJson();
+}
+
 
 
 public function indexToysGenerico(){
